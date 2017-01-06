@@ -20,3 +20,6 @@ function remove_menus(){
 
 }
 add_action( 'admin_menu', 'remove_menus' );
+
+
+require_once('partials/column_expiry_date.php');

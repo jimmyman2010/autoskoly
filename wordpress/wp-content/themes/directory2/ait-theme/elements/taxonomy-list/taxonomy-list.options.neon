@@ -5,8 +5,8 @@ taxonomy:
 	type: select
 	selected: "aititems"
 	default:
-		"aititems": Item Categories
-		"aitlocations": Item Locations
+		"aititems": Item Categoriesss
+		"aitlocations": Item Locationsss
 
 - section(id: taxonomy-aitlocations, title: '')
 
