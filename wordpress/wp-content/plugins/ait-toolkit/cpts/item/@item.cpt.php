@@ -6,9 +6,9 @@ return array(
 
 	'cpt' => array(
 		'labels' => array(
-			'name'               => _x('Items', 'post type general name', 'ait-toolkit'),
+			'name'               => _x('Autoskola Horoskop', 'post type general name', 'ait-toolkit'),
 			'singular_name'      => _x('Item', 'post type singular name', 'ait-toolkit'),
-			'menu_name'          => _x('Items', 'post type menu name', 'ait-toolkit'),
+			'menu_name'          => _x('Autoskola Horoskop', 'post type menu name', 'ait-toolkit'),
 			'add_new'            => _x('Add New', 'Item', 'ait-toolkit'),
 			'add_new_item'       => __('Add New Item', 'ait-toolkit'),
 			'edit_item'          => __('Edit Item', 'ait-toolkit'),
@@ -53,9 +53,9 @@ return array(
 	'taxonomies' => array(
 		'items' => array(
 			'labels' => array(
-				'name'              => _x('Item Categories', 'taxonomy general name', 'ait-toolkit'),
-				'menu_name'         => _x('Item Categories', 'taxonomy menu name', 'ait-toolkit'),
-				'singular_name'     => _x('Item Category', 'taxonomy singular name', 'ait-toolkit'),
+				'name'              => _x('Cities', 'taxonomy general name', 'ait-toolkit'),
+				'menu_name'         => _x('Cities', 'taxonomy menu name', 'ait-toolkit'),
+				'singular_name'     => _x('City', 'taxonomy singular name', 'ait-toolkit'),
 				'search_items'      => __('Search Categories', 'ait-toolkit'),
 				'all_items'         => __('All Categories', 'ait-toolkit'),
 				'parent_item'       => __('Parent Category', 'ait-toolkit'),
@@ -81,9 +81,9 @@ return array(
 
 		'locations' => array(
 			'labels' => array(
-				'name'              => _x('Item Locations', 'taxonomy general name', 'ait-toolkit'),
-				'menu_name'         => _x('Item Locations', 'taxonomy menu name', 'ait-toolkit'),
-				'singular_name'     => _x('Item Location', 'taxonomy singular name', 'ait-toolkit'),
+				'name'              => _x('Regions', 'taxonomy general name', 'ait-toolkit'),
+				'menu_name'         => _x('Regions', 'taxonomy menu name', 'ait-toolkit'),
+				'singular_name'     => _x('Region', 'taxonomy singular name', 'ait-toolkit'),
 				'search_items'      => __('Search Categories', 'ait-toolkit'),
 				'all_items'         => __('All Categories', 'ait-toolkit'),
 				'parent_item'       => __('Parent Category', 'ait-toolkit'),

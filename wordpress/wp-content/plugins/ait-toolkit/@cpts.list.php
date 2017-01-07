@@ -1,7 +1,7 @@
 <?php
 
 return array(
-	'ad-space'    => array(
+	/*'ad-space'    => array(
 		'package' => array('business' => true, 'developer' => true, 'themeforest' => true),
 	),
 	'event'       => array(
@@ -17,9 +17,6 @@ return array(
 		'package' => array('business' => true, 'developer' => true, 'themeforest' => true),
 	),
 	'member'      => array(
-		'package' => array('business' => true, 'developer' => true, 'themeforest' => true),
-	),
-	'partner'     => array(
 		'package' => array('business' => true, 'developer' => true, 'themeforest' => true),
 	),
 	'portfolio-item'   => array(
@@ -43,9 +40,6 @@ return array(
 	'match' => array(
 		'package' => array('business' => true, 'developer' => true, 'themeforest' => false),
 	),
-	'item' => array(
-		'package' => array('business' => true, 'developer' => true, 'themeforest' => false),
-	),
 	'rating' => array(
 		'package' => array('business' => true, 'developer' => true, 'themeforest' => false),
 	),
@@ -60,5 +54,11 @@ return array(
 	),
 	'obituary' => array(
 		'package' => array('business' => true, 'developer' => true, 'themeforest' => true),
+	),
+	'partner'     => array(
+		'package' => array('business' => true, 'developer' => true, 'themeforest' => true),
+	),*/
+	'item' => array(
+		'package' => array('business' => true, 'developer' => true, 'themeforest' => false),
 	),
 );
