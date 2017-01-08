@@ -6,9 +6,9 @@ return array(
 
 	'cpt' => array(
 		'labels' => array(
-			'name'               => _x('Autoškola Horoskop', 'post type general name', 'ait-toolkit'),
+			'name'               => _x('Autoškoly', 'post type general name', 'ait-toolkit'),
 			'singular_name'      => _x('Item', 'post type singular name', 'ait-toolkit'),
-			'menu_name'          => _x('Autoškola Horoskop', 'post type menu name', 'ait-toolkit'),
+			'menu_name'          => _x('Autoškoly', 'post type menu name', 'ait-toolkit'),
 			'add_new'            => _x('Add New', 'Item', 'ait-toolkit'),
 			'add_new_item'       => __('Add New Item', 'ait-toolkit'),
 			'edit_item'          => __('Edit Item', 'ait-toolkit'),
