@@ -3,7 +3,7 @@
 return array(
 
 	'subtitle' => array(
-		'label' => __('Subtitle', 'ait-admin'),
+		'label' => __('Slogan', 'ait-admin'),
 		'type' => 'text',
 		'default' => "",
 	),

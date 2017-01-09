@@ -26,9 +26,9 @@
 
 {capture $searchKeyword}
 	{if $type == 2}
-	<span class="searchinput-wrap"><input type="text" name="s" id="searchinput-text" placeholder="{__ 'Search keyword'}" class="searchinput" value="{$selectedKey}"></span>
+	<span class="searchinput-wrap"><input type="text" name="s" id="searchinput-text" placeholder="{__ 'Name'}" class="searchinput" value="{$selectedKey}"></span>
 	{else}
-	<span class="searchinput-wrap"><input type="text" name="s" id="searchinput-text" placeholder="{__ 'Search keyword'}" class="searchinput" value="{$selectedKey}"></span>
+	<span class="searchinput-wrap"><input type="text" name="s" id="searchinput-text" placeholder="{__ 'Name'}" class="searchinput" value="{$selectedKey}"></span>
 	{/if}
 {/capture}
 
@@ -44,7 +44,7 @@
 			{if $type == 3}
 			<select name="category" class="category-search default-disabled" style="display: none;">
 			{else}
-			<select data-placeholder="{__ 'Category'}" name="category" class="category-search default-disabled" style="display: none;">
+			<select data-placeholder="{__ 'City'}" name="category" class="category-search default-disabled" style="display: none;">
 			{/if}
 			<option></option>
 			{!= recursiveCategory($categories, $selectedCat, 'ait-items', "")}
@@ -60,10 +60,10 @@
 				<span class="location-icon"><i class="fa fa-map-marker"></i></span>
 				<span class="location-clear"><i class="fa fa-times"></i></span>
 				<div class="advanced-search-location">
-					<input name="location-address" class="location-search" type="text" id=location-address placeholder="{__ 'Location'}" value="{stripslashes($selectedLocationAddress)}">
+					<input name="location-address" class="location-search" type="text" id=location-address placeholder="{__ 'Region'}" value="{stripslashes($selectedLocationAddress)}">
 				</div>
 			{else}
-				<input name="location-address" class="location-search searchinput" type="text" id=location-address placeholder="{__ 'Location'}" value="{stripslashes($selectedLocationAddress)}">
+				<input name="location-address" class="location-search searchinput" type="text" id=location-address placeholder="{__ 'Region'}" value="{stripslashes($selectedLocationAddress)}">
 				{if $type == 1}
 					<i class="fa fa-map-marker"></i>
 				{/if}
@@ -81,7 +81,7 @@
 				{if $type == 3}
 				<select name="location" class="location-search default-disabled" style="display: none;">
 				{else}
-				<select data-placeholder="{__ 'Location'}" name="location" class="location-search default-disabled" style="display: none;">
+				<select data-placeholder="{__ 'Region'}" name="location" class="location-search default-disabled" style="display: none;">
 				{/if}
 				<option></option>
 				{!= recursiveCategory($locations, $selectedLoc, 'ait-locations', "")}
@@ -234,9 +234,9 @@
 						<!-- <input type="hidden" name="lang" value="{AitLangs::getCurrentLanguageCode()}"> --> <!-- Advanced search -->
 
 						{if $selectedKey}
-						<div class="searchinput search-input-width-hack" style="position: fixed; z-index: 99999; visibility: hidden" data-defaulttext="{__ 'Search keyword'}">{$selectedKey}</div>
+						<div class="searchinput search-input-width-hack" style="position: fixed; z-index: 99999; visibility: hidden" data-defaulttext="{__ 'Name'}">{$selectedKey}</div>
 						{else}
-						<div class="searchinput search-input-width-hack" style="position: fixed; z-index: 99999; visibility: hidden" data-defaulttext="{__ 'Search keyword'}">{__ 'Search keyword'}</div>
+						<div class="searchinput search-input-width-hack" style="position: fixed; z-index: 99999; visibility: hidden" data-defaulttext="{__ 'Name'}">{__ 'Name'}</div>
 						{/if}
 					</div>
 					{if $type != 3}
