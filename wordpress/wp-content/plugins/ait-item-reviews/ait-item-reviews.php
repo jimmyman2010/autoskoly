@@ -1104,10 +1104,16 @@ class AitItemReviews {
 			// get the rated post
 			$item = get_post($ajaxData['rating-for']);
 
+			$postTitle = $ajaxData['rating-name'];
+			$currentUser = wp_get_current_user();
+			if ( $currentUser instanceof WP_User ) {
+				$postTitle = $currentUser->display_name;
+			}
+
 			// prepare new rating
 			$review = array(
 				'post_type'			=> 'ait-review',
-				'post_title'		=> $ajaxData['rating-name'],
+				'post_title'		=> $postTitle,
 				'post_content'		=> $ajaxData['rating-desc'],
 				'post_author'		=> $item->post_author,
 				'post_status'		=> 'pending',
@@ -1156,6 +1162,9 @@ class AitItemReviews {
 				AitItemReviews::notifyOwner($user, __('Review pending moderation','ait-item-reviews'), $bulkMessage);
 			}
 			/* Send Mail to item author when capabilityReviewsAuthorManage is set to true in package */
+
+			//don't need to approved by admin
+			AitItemReviews::reviewApprove($review_id);
 
 			$response = array(
 				'status' => '200',

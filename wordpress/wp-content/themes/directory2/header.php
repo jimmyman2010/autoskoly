@@ -22,6 +22,9 @@
 	{wpHead}
 
 	{!$options->theme->header->customJsCode}
+
+	<link type="text/css" rel="stylesheet" href="/wp-content/themes/directory2/css/autoskoly.css" />
+	<script type="text/javascript" src="/wp-content/themes/directory2/js/autoskoly.js"></script>
 </head>
 
 {var $searchFormClass = ""}

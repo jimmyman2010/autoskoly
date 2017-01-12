@@ -11,6 +11,12 @@ return array(
 					'default'	=> true,
 				),
 
+				'showReviews' => array(
+					'label' 	=> __('Show reviews', 'ait-item-reviews'),
+					'type'		=> 'on-off',
+					'default'	=> false,
+				),
+
 				'maxShownReviews' => array(
 					'label'		=> __('Maximum shown reviews', 'ait-item-reviews'),
 					'type'		=> 'select',

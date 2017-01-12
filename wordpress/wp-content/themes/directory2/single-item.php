@@ -104,6 +104,12 @@
 			{/if}
 			{* CLAIM LISTING SECTION *}
 
+			{* REVIEWS SECTION *}
+			{if defined('AIT_REVIEWS_ENABLED')}
+			{includePart portal/parts/single-item-reviews}
+			{/if}
+			{* REVIEWS SECTION *}
+
 			{* MAP SECTION *}
 			{includePart portal/parts/single-item-map}
 			{* MAP SECTION *}
@@ -123,12 +129,6 @@
 			{* FEATURES SECTION *}
 			{includePart portal/parts/single-item-features}
 			{* FEATURES SECTION *}
-
-			{* REVIEWS SECTION *}
-			{if defined('AIT_REVIEWS_ENABLED')}
-			{includePart portal/parts/single-item-reviews}
-			{/if}
-			{* REVIEWS SECTION *}
 
 			{* SPECIAL OFFERS SECTION *}
 			{if (defined('AIT_SPECIAL_OFFERS_ENABLED'))}

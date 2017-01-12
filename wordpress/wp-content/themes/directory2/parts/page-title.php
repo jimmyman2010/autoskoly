@@ -23,6 +23,8 @@
 	{var $categoryColor = ''}
 
 	{var $subtitle = ""}
+
+	{var $logo = ""}
 	{var $subtext = ""}
 
 	{if defined('AIT_EVENTS_PRO_ENABLED')}
@@ -184,6 +186,8 @@
 	{* SUBTITLE ****** *} {if $wp->isSingular(item)}
 							{var $itemMeta = $post->meta('item-data')}
 							{var $subtitle = AitLangs::getCurrentLocaleText($itemMeta->subtitle)}
+
+							{var $logo = AitLangs::getCurrentLocaleText($itemMeta->logo)}
 						  {/if}
 
 	{* TITLE EXCERPT ****** *}	{if $wp->isSingular(event-pro)}
@@ -352,9 +356,15 @@
 					{/if}
 				<div class="entry-title-wrap">
 
-					{if isset($categoryIcon)}
-						<div class="cat-icon"><span {if !empty($categoryColor)}style="background: {!$categoryColor};"{/if}><img src="{$categoryIcon}" alt="{!titleName}"></span></div>
-
+					{*if isset($categoryIcon)*}
+						<!--div class="cat-icon"><span {if !empty($categoryColor)}style="background: {!$categoryColor};"{/if}><img src="{$categoryIcon}" alt="{!titleName}"></span></div-->
+					{*/if*}
+					{if $logo}
+						<div class="cat-icon">
+							<span>
+								<img src="{$logo}" alt="">
+							</span>
+						</div>
 					{/if}
 
 					<h1>{!$itemExpired}{!$titleName}</h1>
@@ -419,7 +429,7 @@
 
 			</div>
 
-			{includePart parts/breadcrumbs}
+			{*includePart parts/breadcrumbs*}
 
 		</header><!-- /.entry-header -->
 

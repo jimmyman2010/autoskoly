@@ -2,6 +2,12 @@
 
 return array(
 
+	'logo' => array(
+		'label' => __('Logo', 'ait-admin'),
+		'type' => 'image',
+		'default' => "",
+	),
+
 	'subtitle' => array(
 		'label' => __('Slogan', 'ait-admin'),
 		'type' => 'text',
@@ -47,7 +53,7 @@ return array(
 	array('section' => array('title' => __('General', 'ait-toolkit'))),
 
 	'map' => array(
-		'label' => __('Address', 'ait-toolkit'),
+		'label' => __('Map', 'ait-toolkit'),
 		'type' => 'map',
 		'default' => array(
 			'address'    => '',
@@ -59,14 +65,44 @@ return array(
 		'help' => __('Specify address and position of item', 'ait-toolkit'),
 	),
 
-	'telephone' => array(
-		'label'        => __('Telephone', 'ait-toolkit'),
+	'address' => array(
+		'label'        => __('Address', 'ait-toolkit'),
 		'type'         => 'string',
-		'capabilities' => true,
-		'help'         => __('Telephone number related to item', 'ait-toolkit'),
+		'help'         => __('Address related to item', 'ait-toolkit'),
 	),
 
-	'telephoneAdditional' => array(
+	'web' => array(
+		'label'        => __('Website', 'ait-toolkit'),
+		'type'         => 'url',
+		'default'      => '',
+		'capabilities' => true,
+		'help'         => __('Web address, use valid URL format with http://', 'ait-toolkit'),
+	),
+
+	'webLinkLabel' => array(
+		'label'        => __('Website Link Label', 'ait-toolkit'),
+		'type'         => 'string',
+		'default'      => '',
+		'capabilities' => true,
+		'help'         => __('Text displayed instead of full web address', 'ait-toolkit'),
+	),
+
+	'email' => array(
+		'label'        => __('Email', 'ait-toolkit'),
+		'type'         => 'string',
+		'default'      => '',
+		'capabilities' => true,
+		'help'         => __('Email address related to item', 'ait-toolkit'),
+	),
+
+	'telephone' => array(
+		'label'        => __('Phone Number', 'ait-toolkit'),
+		'type'         => 'string',
+		'capabilities' => true,
+		'help'         => __('Phone number related to item', 'ait-toolkit'),
+	),
+
+	/*'telephoneAdditional' => array(
 		'label' => __('Additional telephone numbers', 'ait-toolkit'),
 		'type' => 'clone',
 		'max' => 5,
@@ -79,46 +115,30 @@ return array(
 		'default' => array(),
 		'help' => __('Additional telephone numbers related to item', 'ait-toolkit'),
 		'capabilities' => true,
+	),*/
+
+	'fax' => array(
+		'label'        => __('Fax Number', 'ait-toolkit'),
+		'type'         => 'string',
+		'help'         => __('Fax number related to item', 'ait-toolkit'),
 	),
 
-	'email' => array(
-		'label'        => __('Email', 'ait-toolkit'),
+	'mobilePhone' => array(
+		'label'        => __('Mobile Phone Number', 'ait-toolkit'),
+		'type'         => 'string',
+		'help'         => __('Mobile phone number related to item', 'ait-toolkit'),
+	),
+
+	'languagesOffered' => array(
+		'label'        => __('Languages offered', 'ait-toolkit'),
 		'type'         => 'string',
 		'default'      => '',
-		'capabilities' => true,
-		'help'         => __('Email address related to item', 'ait-toolkit'),
 	),
 
-	'showEmail' => array(
-		'label'        => __('Show Email', 'ait-toolkit'),
-		'type'         => 'on-off',
-		'default'      => true,
-		'capabilities' => true,
-		'help'         => __('Display or hide email address on page', 'ait-toolkit'),
-	),
-
-	'contactOwnerBtn' => array(
-		'label'        => __('Contact owner button', 'ait-toolkit'),
-		'type'         => 'on-off',
-		'default'      => 'off',
-		'capabilities' => true,
-		'help'         => __('Create contact form on page', 'ait-toolkit'),
-	),
-
-	'web' => array(
-		'label'        => __('Web', 'ait-toolkit'),
-		'type'         => 'url',
-		'default'      => '',
-		'capabilities' => true,
-		'help'         => __('Web address, use valid URL format with http://', 'ait-toolkit'),
-	),
-
-	'webLinkLabel' => array(
-		'label'        => __('Web Link Label', 'ait-toolkit'),
+	'lengthOfCourse' => array(
+		'label'        => __('Length of the course', 'ait-toolkit'),
 		'type'         => 'string',
 		'default'      => '',
-		'capabilities' => true,
-		'help'         => __('Text displayed instead of full web address', 'ait-toolkit'),
 	),
 
 	array('section' => array('id' => 'itemOpeningHours', 'title' => __('Opening Hours', 'ait-toolkit'), 'capabilities' => true)),

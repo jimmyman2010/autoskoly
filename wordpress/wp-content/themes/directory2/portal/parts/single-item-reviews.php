@@ -41,12 +41,12 @@
 		{var $current_rating_count = AitItemReviews::getReviewCount($post->id)}	
 		{var $current_rating_mean = get_post_meta($post->id, 'rating_mean', true)}
 		{if $current_rating_count > 0}
-		<div class="current-rating-container review-stars-container">
+		<!--div class="current-rating-container review-stars-container">
 			<h3><?php _e('Your Rating', 'ait') ?></h3>
-			<!--<div class="content">
+			<div class="content">
 				<span class="current-stars review-stars" data-score="{$current_rating_mean}"></span>
-			</div>-->
-		</div>
+			</div>
+		</div-->
 		{/if}
 		{* CURRENT RATING *}
 
@@ -59,7 +59,7 @@
 		{var $reviews_query = AitItemReviews::getCurrentItemReviews($post->id, array('posts_per_page' => intval($options->theme->itemReviews->maxShownReviews), 'nopaging' => false))}
 	{/if}
 
-	{if count($reviews_query->posts) > 0}
+	{if $options->theme->itemReviews->showReviews && count($reviews_query->posts) > 0}
 	<div class="content">
 		{customLoop from $reviews_query as $review}
 
