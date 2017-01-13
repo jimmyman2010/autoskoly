@@ -1,13 +1,73 @@
 <div n:class="'address-container', $meta->displaySocialIcons && count($meta->socialIcons) > 0 ? social-icons-displayed">
-	<h2>{__ 'Address'}</h2>
+	<h2>{__ 'Information'}</h2>
 
 	{includePart portal/parts/single-item-social-icons}
 
 	<div class="content">
+
+		{if !$meta->web && $settings->addressHideEmptyFields}{else}
+		<div class="address-row row-web">
+			<div class="address-name"><h5>{__ 'Website'}:</h5></div>
+			<div class="address-data"><p>{if $meta->web}<a href="{$meta->web}" target="_blank" itemprop="url" {if $settings->addressWebNofollow}rel="nofollow"{/if}>{if $meta->webLinkLabel}{$meta->webLinkLabel}{else}{$meta->web}{/if}</a>{else}-{/if}</p></div>
+		</div>
+		{/if}
+
+		{if !$meta->telephone && $settings->addressHideEmptyFields}{else}
+		<div class="address-row row-telephone">
+			<div class="address-name"><h5>{__ 'Phone number'}:</h5></div>
+			<div class="address-data">
+				{if $meta->telephone}
+				<p>
+					<span itemprop="telephone"><a href="tel:{$meta->telephone}" class="phone">{$meta->telephone}</a></span>
+				</p>
+				{else}
+				<p>-</p>
+				{/if}
+			</div>
+
+		</div>
+		{/if}
+
+		{if !$meta->fax && $settings->addressHideEmptyFields}{else}
+		<div class="address-row row-telephone">
+			<div class="address-name"><h5>{__ 'Fax number'}:</h5></div>
+			<div class="address-data">
+				{if $meta->fax}
+				<p>
+					<span itemprop="fax"><a href="tel:{$meta->fax}" class="phone">{$meta->fax}</a></span>
+				</p>
+				{else}
+				<p>-</p>
+				{/if}
+			</div>
+
+		</div>
+		{/if}
+
+		{if !$meta->mobilePhone && $settings->addressHideEmptyFields}{else}
+		<div class="address-row row-telephone">
+			<div class="address-name"><h5>{__ 'Mobile phone number'}:</h5></div>
+			<div class="address-data">
+				{if $meta->mobilePhone}
+				<p>
+					<span itemprop="mobilePhone"><a href="tel:{$meta->mobilePhone}" class="phone">{$meta->mobilePhone}</a></span>
+				</p>
+				{else}
+				<p>-</p>
+				{/if}
+			</div>
+
+		</div>
+		{/if}
+
 		{if !$meta->map['address'] && $settings->addressHideEmptyFields}{else}
+		{var address = $meta->map['address']}
+		{if $meta->address}
+			{var address = $meta->address}
+		{/if}
 		<div class="address-row row-postal-address" itemscope itemtype="http://schema.org/PostalAddress">
-			<div class="address-name"><h5>{__ 'Our Address'}:</h5></div>
-			<div class="address-data" itemprop="streetAddress"><p>{if $meta->map['address']}{$meta->map['address']}{else}-{/if}</p></div>
+			<div class="address-name"><h5>{__ 'Address'}:</h5></div>
+			<div class="address-data" itemprop="streetAddress"><p>{if $address}{$address}{else}-{/if}</p></div>
 		</div>
 		{/if}
 
@@ -29,68 +89,93 @@
 		{/if}
 		{/if}
 
-		{if !$meta->telephone && $settings->addressHideEmptyFields}{else}
-		<div class="address-row row-telephone">
-			<div class="address-name"><h5>{__ 'Telephone'}:</h5></div>
-			<div class="address-data">
-				{if $meta->telephone}
-				<p>
-					<span itemprop="telephone"><a href="tel:{$meta->telephone}" class="phone">{$meta->telephone}</a></span>
-				</p>
-				{else}
-				<p>-</p>
-				{/if}
+		{if !$meta->email && $settings->addressHideEmptyFields}{else}
+			<div class="address-row row-email">
+				<div class="address-name"><h5>{__ 'Email'}:</h5></div>
+				<div class="address-data">
+					{if $meta->email != ""}
+						<p><a href="mailto:{$meta->email}" target="_top" itemprop="email">{$meta->email}</a></p>
+					{else}
+						<p>-</p>
+					{/if}
+				</div>
+			</div>
+		{/if}
 
-				{if is_array($meta->telephoneAdditional) && count($meta->telephoneAdditional) > 0}
-					{foreach $meta->telephoneAdditional as $data}
-					<p>
-						<span itemprop="telephone"><a href="tel:{$data['number']}" class="phone">{$data['number']}</a></span>
-					</p>
-					{/foreach}
-				{/if}
+		<!--
+		{var $taxonomies = $post->taxonomies}
+		{foreach $taxonomies as $taxonomy}
+			{$taxonomy}<br>
+		{/foreach}
+		-->
+		{var $terms = get_the_terms($post->id, 'ait-items')}
+		{if $terms}
+		<div class="address-row row-city">
+			<div class="address-name"><h5>{__ 'City'}:</h5></div>
+			<div class="address-data">
+
+				{foreach $terms as $index => $term}
+					{if $index > 0}, {/if}<span>{$term->name}</span>
+				{/foreach}
+
 			</div>
 
 		</div>
 		{/if}
 
-		{if $settings->addressHideEmptyFields}
-			{if $meta->email != ""}
-				{if $meta->showEmail}
-					<div n:class="address-row, row-email, !$meta->showEmail ? hide-email">
-						<div class="address-name"><h5>{__ 'Email'}:</h5></div>
-						<div class="address-data"><p><a href="mailto:{$meta->email}" target="_top" itemprop="email">{$meta->email}</a></p></div>
-					</div>
-				{else}
-					{* dont display anything *}
-				{/if}
-			{else}
-				{* dont display anything *}
-			{/if}
-		{else}
-			{if $meta->email != ""}
-				{if $meta->showEmail}
-					<div n:class="address-row, row-email, !$meta->showEmail ? hide-email">
-						<div class="address-name"><h5>{__ 'Email'}:</h5></div>
-						<div class="address-data"><p><a href="mailto:{$meta->email}" target="_top" itemprop="email">{$meta->email}</a></p></div>
-					</div>
-				{else}
-					<div n:class="address-row, row-email, !$meta->showEmail ? hide-email">
-						<div class="address-name"><h5>{__ 'Email'}:</h5></div>
-						<div class="address-data"><p>-</p></div>
-					</div>
-				{/if}
-			{else}
-				<div n:class="address-row, row-email, !$meta->showEmail ? hide-email">
-					<div class="address-name"><h5>{__ 'Email'}:</h5></div>
-					<div class="address-data"><p>-</p></div>
-				</div>
-			{/if}
+		{var $terms = get_the_terms($post->id, 'ait-locations')}
+		{if $terms}
+		<div class="address-row row-region">
+			<div class="address-name"><h5>{__ 'Region'}:</h5></div>
+			<div class="address-data">
+
+				{foreach $terms as $index => $term}
+					{if $index > 0}, {/if}<span>{$term->name}</span>
+				{/foreach}
+
+			</div>
+
+		</div>
 		{/if}
 
-		{if !$meta->web && $settings->addressHideEmptyFields}{else}
-		<div class="address-row row-web">
-			<div class="address-name"><h5>{__ 'Web'}:</h5></div>
-			<div class="address-data"><p>{if $meta->web}<a href="{$meta->web}" target="_blank" itemprop="url" {if $settings->addressWebNofollow}rel="nofollow"{/if}>{if $meta->webLinkLabel}{$meta->webLinkLabel}{else}{$meta->web}{/if}</a>{else}-{/if}</p></div>
+		{if !$meta->languagesOffered && $settings->addressHideEmptyFields}{else}
+		<div class="address-row row-email">
+			<div class="address-name"><h5>{__ 'Languages offered'}:</h5></div>
+			<div class="address-data">
+				{if $meta->languagesOffered != ""}
+					<p><span itemprop="offer">{$meta->languagesOffered}</span></p>
+				{else}
+					<p>-</p>
+				{/if}
+			</div>
+		</div>
+		{/if}
+
+		{var $terms = get_the_terms($post->id, 'ait-licence')}
+		{if $terms}
+		<div class="address-row row-licence">
+			<div class="address-name"><h5>{__ 'Licence groups'}:</h5></div>
+			<div class="address-data">
+
+				{foreach $terms as $index => $term}
+					{if $index > 0}, {/if}<span>{$term->name}</span>
+				{/foreach}
+
+			</div>
+
+		</div>
+		{/if}
+
+		{if !$meta->lengthOfCourse && $settings->addressHideEmptyFields}{else}
+		<div class="address-row row-email">
+			<div class="address-name"><h5>{__ 'Length of the course'}:</h5></div>
+			<div class="address-data">
+				{if $meta->lengthOfCourse != ""}
+				<p><span itemprop="offer">{$meta->lengthOfCourse}</span></p>
+				{else}
+				<p>-</p>
+				{/if}
+			</div>
 		</div>
 		{/if}
 	</div>

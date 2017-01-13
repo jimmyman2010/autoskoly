@@ -11,41 +11,28 @@
 			<meta itemprop="name" content="{$post->title}">
 		{*RICH SNIPPET WRAP*}
 
-			{var $wouldGalleryDisplay = false}
+			{var $imageDisplay = false}
 			{if $post->hasImage}
-				{var $wouldGalleryDisplay = true}
+				{var $imageDisplay = true}
 			{/if}
+
+			{var $wouldGalleryDisplay = false}
 			{if $meta->displayGallery && is_array($meta->gallery) && count($meta->gallery) > 0}
 				{var $wouldGalleryDisplay = true}
 			{/if}
 
-			{if $wouldGalleryDisplay == false}
-				{if defined('AIT_REVIEWS_ENABLED')}
-					{includePart portal/parts/single-item-reviews-stars, showCount => true, class => "gallery-hidden"}
-				{/if}
-			{/if}
-
 			{* CONTENT SECTION *}
-				{if $wouldGalleryDisplay == false}
-				<div class="column-grid column-grid-2">
-					<div class="column column-span-2 column-first column-last">
-						<div class="entry-content-wrap" itemprop="description">
-							<div class="entry-content">
-								{if $post->hasContent}
-									{!$post->content}
-								{else}
-									{!$post->excerpt}
-								{/if}
-							</div>
-						</div>
-					</div>
-				</div>
-				{else}
 				<div class="column-grid column-grid-3">
 					<div class="column column-span-1 column-narrow column-first">
-					{* GALLERY SECTION *}
-					{includePart portal/parts/single-item-gallery}
-					{* GALLERY SECTION *}
+						{* IMAGE SECTION *}
+						{includePart portal/parts/single-item-image}
+						{* IMAGE SECTION *}
+
+						<div class="tablet">
+							{* OPENING HOURS SECTION *}
+							{includePart portal/parts/single-item-opening-hours}
+							{* OPENING HOURS SECTION *}
+						</div>
 					</div>
 
 					<div class="column column-span-2 column-narrow column-last">
@@ -57,40 +44,42 @@
 									{!$post->excerpt}
 								{/if}
 							</div>
+							{if $wouldGalleryDisplay == true}
+							<div class="entry-gallery">
+								{* GALLERY SECTION *}
+								{includePart portal/parts/single-item-gallery}
+								{* GALLERY SECTION *}
+							</div>
+							{/if}
 						</div>
+
+						<div class="mobile">
+							{* OPENING HOURS SECTION *}
+							{includePart portal/parts/single-item-opening-hours}
+							{* OPENING HOURS SECTION *}
+						</div>
+
+						{* ADDRESS SECTION *}
+						{includePart portal/parts/single-item-address}
+						{* ADDRESS SECTION *}
+
+						{* CLAIM LISTING SECTION *}
+						{*includePart portal/parts/claim-listing*}
+						{* CLAIM LISTING SECTION *}
+
+						{* CONTACT OWNER SECTION *}
+						{includePart portal/parts/single-item-contact-owner}
+						{* CONTACT OWNER SECTION *}
+
+						{* GET DIRECTIONS SECTION *}
+						{if defined('AIT_GET_DIRECTIONS_ENABLED')}
+						{includePart portal/parts/get-directions-button}
+						{/if}
+						{* GET DIRECTIONS SECTION *}
+
 					</div>
 				</div>
-				{/if}
 			{* CONTENT SECTION *}
-
-
-			<div class="column-grid column-grid-3">
-				<div class="column column-span-1 column-narrow column-first">
-					{* OPENING HOURS SECTION *}
-					{includePart portal/parts/single-item-opening-hours}
-					{* OPENING HOURS SECTION *}
-				</div>
-
-				<div class="column column-span-2 column-narrow column-last">
-					{* ADDRESS SECTION *}
-					{includePart portal/parts/single-item-address}
-					{* ADDRESS SECTION *}
-
-					{* CLAIM LISTING SECTION *}
-					{*includePart portal/parts/claim-listing*}
-					{* CLAIM LISTING SECTION *}
-
-					{* CONTACT OWNER SECTION *}
-					{includePart portal/parts/single-item-contact-owner}
-					{* CONTACT OWNER SECTION *}
-
-					{* GET DIRECTIONS SECTION *}
-					{if defined('AIT_GET_DIRECTIONS_ENABLED')}
-						{includePart portal/parts/get-directions-button}
-					{/if}
-					{* GET DIRECTIONS SECTION *}
-				</div>
-			</div>
 
 			{* ITEM EXTENSION *}
 			{if defined('AIT_EXTENSION_ENABLED')}

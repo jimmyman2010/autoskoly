@@ -362,7 +362,7 @@
 					{if $logo}
 						<div class="cat-icon">
 							<span>
-								<img src="{$logo}" alt="">
+								<img src="{imageUrl $logo, width => 100, height => 100, crop => 1}" alt="">
 							</span>
 						</div>
 					{/if}
