@@ -106,34 +106,6 @@ return array(
 				),
 			),
 		),
-
-		'licence' => array(
-			'labels' => array(
-				'name'              => _x('Licences', 'taxonomy general name', 'ait-toolkit'),
-				'menu_name'         => _x('Licences', 'taxonomy menu name', 'ait-toolkit'),
-				'singular_name'     => _x('Licence', 'taxonomy singular name', 'ait-toolkit'),
-				'search_items'      => __('Search Licences', 'ait-toolkit'),
-				'all_items'         => __('All Licences', 'ait-toolkit'),
-				'parent_item'       => __('Parent Licence', 'ait-toolkit'),
-				'parent_item_colon' => __('Parent Licence:', 'ait-toolkit'),
-				'edit_item'         => __('Edit Licence', 'ait-toolkit'),
-				'view_item'         => __('View Licence', 'ait-toolkit'),
-				'update_item'       => __('Update Licence', 'ait-toolkit'),
-				'add_new_item'      => __('Add New Licence', 'ait-toolkit'),
-				'new_item_name'     => __('New Licence Name', 'ait-toolkit'),
-			),
-			'args' => array(
-				'rewrite' => array(
-					'slug' => 'lic',
-				),
-				'capabilities' => array(
-					'manage_terms' => 'ait_toolkit_items_category_manage_locations',
-					'edit_terms'   => 'ait_toolkit_items_category_edit_locations',
-					'delete_terms' => 'ait_toolkit_items_category_delete_locations',
-					'assign_terms' => 'ait_toolkit_items_category_assign_locations',
-				),
-			),
-		),
 	),
 
 	'metaboxes' => array(
