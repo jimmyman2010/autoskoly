@@ -162,17 +162,17 @@ class AitAdvancedFilters {
 	/* TYPE REGISTRATION */
 	public static function registerTax(){
 		$labels = array(
-			'name'				=> _x( 'Advanced Filters', 'taxonomy general name', 'ait-advanced-filters' ),
-			'singular_name'		=> _x( 'Advanced Filter', 'taxonomy singular name', 'ait-advanced-filters' ),
-			'search_items'		=> __( 'Search Filters', 'ait-advanced-filters' ),
-			'all_items'			=> __( 'All Filters', 'ait-advanced-filters' ),
-			'parent_item'		=> __( 'Parent Filter', 'ait-advanced-filters' ),
-			'parent_item_colon'	=> __( 'Parent Filter:', 'ait-advanced-filters' ),
-			'edit_item'			=> __( 'Edit Filter', 'ait-advanced-filters' ),
-			'update_item'		=> __( 'Update Filter', 'ait-advanced-filters' ),
-			'add_new_item'		=> __( 'Add New Filter', 'ait-advanced-filters' ),
-			'new_item_name'		=> __( 'New Filter Name', 'ait-advanced-filters' ),
-			'menu_name'			=> __( 'Item Filters', 'ait-advanced-filters' ),
+			'name'				=> _x( 'Licences', 'taxonomy general name', 'ait-advanced-filters' ),
+			'singular_name'		=> _x( 'Licence', 'taxonomy singular name', 'ait-advanced-filters' ),
+			'search_items'		=> __( 'Search Licences', 'ait-advanced-filters' ),
+			'all_items'			=> __( 'All Licences', 'ait-advanced-filters' ),
+			'parent_item'		=> __( 'Parent Licence', 'ait-advanced-filters' ),
+			'parent_item_colon'	=> __( 'Parent Licence:', 'ait-advanced-filters' ),
+			'edit_item'			=> __( 'Edit Licence', 'ait-advanced-filters' ),
+			'update_item'		=> __( 'Update Licence', 'ait-advanced-filters' ),
+			'add_new_item'		=> __( 'Add New Licence', 'ait-advanced-filters' ),
+			'new_item_name'		=> __( 'New Licence Name', 'ait-advanced-filters' ),
+			'menu_name'			=> __( 'Licences', 'ait-advanced-filters' ),
 		);
 
 		$capabilities = array(

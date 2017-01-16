@@ -2,7 +2,7 @@
 
 return array(
 	'filters' => array(
-		'label' 	=> __('Filters', 'ait-advanced-filters'),
+		'label' 	=> __('Licences group', 'ait-advanced-filters'),
 		'type'		=> 'categories',
 		'multiple'	=> true,
 		'taxonomy'	=> 'ait-items_filters',
@@ -12,6 +12,6 @@ return array(
             'show_count' => false,
         ),
 		'default'	=> '0',
-        'help' => __("Assign filters to Item", 'ait-advanced-filters'),
+//        'help' => __("Assign filters to Item", 'ait-advanced-filters'),
 	),
 );
