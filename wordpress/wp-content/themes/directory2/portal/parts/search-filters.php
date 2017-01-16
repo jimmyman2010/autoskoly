@@ -13,7 +13,6 @@
 {capture $titleLabel}{__ 'Title'}{/capture}
 
 {var $filterOrderBy = array(
-	"date" => $dateLabel,
 	"title" => $titleLabel
 )}
 
@@ -21,6 +20,9 @@
 	{capture $ratingLabel}{__ 'Rating'}{/capture}
 	{? $filterOrderBy["rating"] = $ratingLabel}
 {/if}
+
+{? $filterOrderBy["date"] = $dateLabel}
+
 {var $filterOrderBy = apply_filters('ait_search_filter_orderby', $filterOrderBy, $postType)}
 
 {var $filterCountsSelected = isset($_REQUEST['count']) && $_REQUEST['count'] != "" ? $_REQUEST['count'] : $settings->sortingDefaultCount}
