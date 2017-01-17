@@ -4,7 +4,7 @@
 		{var $meta->features = array()}
 	{/if}
 
-	{if defined('AIT_ADVANCED_FILTERS_ENABLED')}
+	{*if defined('AIT_ADVANCED_FILTERS_ENABLED')}
 		{var $item_meta_filters = $post->meta('filters-options')}
 		{if is_array($item_meta_filters->filters) && count($item_meta_filters->filters) > 0}
 			{var $custom_features = array()}
@@ -21,7 +21,7 @@
 				{/if}
 			{/foreach}
 		{/if}
-	{/if}
+	{/if*}
 
 	{if !empty($meta->features)}
 		{var $numOfColumns = $settings->featuresColumns}

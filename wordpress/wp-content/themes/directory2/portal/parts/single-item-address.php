@@ -151,18 +151,32 @@
 		</div>
 		{/if}
 
-		{var $terms = get_the_terms($post->id, 'ait-licence')}
-		{if $terms}
+
+		{var $licences = array()}
+
+		{if defined('AIT_ADVANCED_FILTERS_ENABLED')}
+			{var $item_meta_filters = $post->meta('filters-options')}
+			{if is_array($item_meta_filters->filters) && count($item_meta_filters->filters) > 0}
+				{var $custom_features = array()}
+				{foreach $item_meta_filters->filters as $filter_id}
+					{var $filter_data = get_term($filter_id, 'ait-items_filters', "OBJECT")}
+					{if $filter_data}
+						{var $filter_meta = get_option( "ait-items_filters_category_".$filter_data->term_id )}
+						{var $filter_icon = isset($filter_meta['icon']) ? $filter_meta['icon'] : ""}
+						{? array_push($licences, $filter_data->name)}
+					{/if}
+				{/foreach}
+			{/if}
+		{/if}
+
+		{if is_array($licences) && count($licences) > 0}
 		<div class="address-row row-licence">
 			<div class="address-name"><h5>{__ 'Licence groups'}:</h5></div>
 			<div class="address-data">
-
-				{foreach $terms as $index => $term}
-					{if $index > 0}, {/if}<span>{$term->name}</span>
+				{foreach $licences as $index => $filter}
+				{if $index > 0}, {/if}<span>{!$filter}</span>
 				{/foreach}
-
 			</div>
-
 		</div>
 		{/if}
 

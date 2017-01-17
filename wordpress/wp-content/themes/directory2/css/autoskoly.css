@@ -48,6 +48,14 @@
     display: none;
 }
 
+.item-container .item-footer .label{
+    min-width: 115px;
+}
+
+.post-type-archive-ait-item .page-title{
+    display: none !important;
+}
+
 @media screen and (min-width: 769px) {
     .reviews-container .review-ratings{
         margin-top: -59px;

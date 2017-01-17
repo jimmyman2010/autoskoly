@@ -3,7 +3,7 @@
 {var $query = $wp_query}
 
 
-{includePart portal/parts/taxonomy-category-list, taxonomy => "ait-items"}
+{*includePart portal/parts/taxonomy-category-list, taxonomy => "ait-items"*}
 
 {var $noFeatured = $options->theme->item->noFeatured}
 

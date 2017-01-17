@@ -61,6 +61,11 @@
                         {var $catLink = get_term_link($category)}
                         <a href="{$catLink}"><span class="item-category">{!$category->name}</span></a>
                     {/foreach}
+                    {var $terms = get_the_terms($post->id, 'ait-locations')}
+                    {foreach $terms as $index => $category}
+                        {var $catLink = get_term_link($category)}
+                        <a href="{$catLink}"><span class="item-category">{!$category->name}</span></a>
+                    {/foreach}
                 </div>
                 {/if}
             </div>
@@ -76,23 +81,29 @@
                 </div>
             </div>
             <div class="item-footer">
-                {if $meta->map['address']}
                 <div class="item-address">
-                    <span class="label">{__ 'Address:'}</span>
-                    <span class="value">{$meta->map['address']}</span>
-                </div>
-                {/if}
+                    <span class="label">{__ 'Location:'}</span>
+                    <span class="value">
+                        {var $terms = get_the_terms($post->id, 'ait-items')}
+                        {foreach $terms as $index => $term}
+                            <span>{$term->name}</span>,
+                        {/foreach}
 
-                {if $meta->web}
+                        {var $terms = get_the_terms($post->id, 'ait-locations')}
+                        {foreach $terms as $index => $term}
+                            {if $index > 0}, {/if}<span>{$term->name}</span>
+                        {/foreach}
+                    </span>
+                </div>
+
+                {if $meta->languagesOffered}
                 <div class="item-web">
-                    <span class="label">{__ 'Web:'}</span>
-                    <span class="value"><a href="{!$meta->web}" target="_blank" {if $options->theme->item->addressWebNofollow}rel="nofollow"{/if}>{if $meta->webLinkLabel}{$meta->webLinkLabel}{else}{$meta->web}{/if}</a></span>
+                    <span class="label">{__ 'Languages offered:'}</span>
+                    <span class="value">{$meta->languagesOffered}</span>
                 </div>
                 {/if}
 
-                {if !is_array($meta->features)}
-                    {var $meta->features = array()}
-                {/if}
+                {var $licences = array()}
 
                 {if defined('AIT_ADVANCED_FILTERS_ENABLED')}
                     {var $item_meta_filters = $post->meta('filters-options')}
@@ -103,34 +114,23 @@
                             {if $filter_data}
                                 {var $filter_meta = get_option( "ait-items_filters_category_".$filter_data->term_id )}
                                 {var $filter_icon = isset($filter_meta['icon']) ? $filter_meta['icon'] : ""}
-                                {? array_push($meta->features, array(
-                                    "icon" => $filter_icon,
-                                    "text" => $filter_data->name,
-                                    "desc" => $filter_data->description
-                                ))}
+                                {? array_push($licences, $filter_data->name)}
                             {/if}
                         {/foreach}
                     {/if}
                 {/if}
 
 
-                {if is_array($meta->features) && count($meta->features) > 0}
+                {if is_array($licences) && count($licences) > 0}
                 <div class="item-features">
-                    <div class="label">{__ 'Features:'}</div>
+                    <div class="label">{__ 'Licences group:'}</div>
                     <div class="value">
                         <ul class="item-filters">
-                        {foreach $meta->features as $filter}
-                            {var $imageClass = $filter['icon'] != '' ? 'has-image' : ''}
-                            {var $textClass = $filter['text'] != '' ? 'has-text' : ''}
-
-                            <li class="item-filter {$imageClass} {$textClass}">
-                                {if $filter['icon'] != ''}
-                                <i class="fa {$filter['icon']}"></i>
-                                {/if}
+                        {foreach $licences as $filter}
+                            <li class="item-filter">
                                 <span class="filter-hover">
-                                    {!$filter['text']}
+                                    {!$filter}
                                 </span>
-
                             </li>
                         {/foreach}
                         </ul>

@@ -1,7 +1,7 @@
 {block content}
 {? global $wp_query}
 
-{var $currentCategory = get_queried_object()}
+{*var $currentCategory = get_queried_object()}
 
 {includePart portal/parts/taxonomy-category-list, taxonomy => "ait-locations"}
 
@@ -9,7 +9,7 @@
 <div class="entry-content">
 	{!$currentCategory->description}
 </div>
-{/if}
+{/if*}
 
 <div n:class="items-container, !$wp->willPaginate($wp_query) ? 'pagination-disabled'">
 	<div class="content">
