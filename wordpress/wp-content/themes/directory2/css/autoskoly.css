@@ -56,6 +56,10 @@
     display: none !important;
 }
 
+.item-container .subtitle{
+    display: block;
+}
+
 @media screen and (min-width: 769px) {
     .reviews-container .review-ratings{
         margin-top: -59px;

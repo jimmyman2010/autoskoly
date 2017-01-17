@@ -101,7 +101,13 @@
 								</div>
 								<div class="item-body">
 									<div class="entry-content">
-										<p class="txtrows-4">{if $post->hasExcerpt}{!$post->excerpt|striptags|trim|truncate: 140}{else}{!$post->content|striptags|trim|truncate: 250}{/if}</p>
+										<p>
+										{if $post->hasExcerpt}
+											{!$post->excerpt|striptags|trim|truncate: 140}
+										{else}
+											{!$post->content|striptags|trim|truncate: 250}
+										{/if}
+										</p>
 									</div>
 								</div>
 								<div class="item-footer">

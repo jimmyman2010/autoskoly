@@ -49,12 +49,15 @@
 								</div>
 								<div class="item-data">
 									<div class="item-header">
-										<div class="item-title">
-											<a href="{$post->permalink}">
-												<h3>{!$post->title}</h3>
-											</a>
+										<div class="item-title-wrap">
+											<div class="item-title">
+												<a href="{$post->permalink}">
+													<h3>{!$post->title}</h3>
+												</a>
+											</div>
+											<span class="subtitle">{AitLangs::getCurrentLocaleText($meta->subtitle)}</span>
 										</div>
-										<span class="subtitle">{AitLangs::getCurrentLocaleText($meta->subtitle)}</span>
+
 										{var $target = $meta->socialIconsOpenInNewWindow ? 'target="_blank"' : ""}
 										{if $meta->displaySocialIcons}
 
@@ -82,78 +85,80 @@
 												{var $catLink = get_term_link($category)}
 												<a href="{$catLink}"><span class="item-category">{!$category->name}</span></a>
 											{/foreach}
+											{var $terms = get_the_terms($post->id, 'ait-locations')}
+											{foreach $terms as $index => $category}
+												{var $catLink = get_term_link($category)}
+												<a href="{$catLink}"><span class="item-category">{!$category->name}</span></a>
+											{/foreach}
 										</div>
 										{/if}
 									</div>
 									<div class="item-body">
 										<div class="entry-content">
-											<p class="txtrows-4">
+											<p>
+											{if $post->hasExcerpt}
 												{!$post->excerpt|striptags|trim|truncate: 250}
+											{else}
+												{!$post->content|striptags|trim|truncate: 250}
+											{/if}
 											</p>
 										</div>
 									</div>
 									<div class="item-footer">
-										{if $meta->map['address']}
 										<div class="item-address">
-											<span class="label">{__ 'Address:'}</span>
-											<span class="value">{$meta->map['address']}</span>
+											<span class="label">{__ 'Location:'}</span>
+											<span class="value">
+												{var $terms = get_the_terms($post->id, 'ait-items')}
+												{foreach $terms as $index => $term}
+													<span>{$term->name}</span>,
+												{/foreach}
+
+												{var $terms = get_the_terms($post->id, 'ait-locations')}
+												{foreach $terms as $index => $term}
+													{if $index > 0}, {/if}<span>{$term->name}</span>
+												{/foreach}
+											</span>
+										</div>
+
+										{if $meta->languagesOffered}
+										<div class="item-web">
+											<span class="label">{__ 'Languages offered:'}</span>
+											<span class="value">{$meta->languagesOffered}</span>
 										</div>
 										{/if}
 
-										{if $meta->web}
-										<div class="item-web">
-											<span class="label">{__ 'Web:'}</span>
-											<span class="value"><a href="{!$meta->web}" target="_blank">{$meta->web}</a></span>
-										</div>
-										{/if}
-										
+										{var $licences = array()}
+
 										{if defined('AIT_ADVANCED_FILTERS_ENABLED')}
 											{var $item_meta_filters = $post->meta('filters-options')}
 											{if is_array($item_meta_filters->filters) && count($item_meta_filters->filters) > 0}
 												{var $custom_features = array()}
-												
-												{if !is_array($meta->features)}
-													{var $meta->features = array()}
-												{/if}
-
 												{foreach $item_meta_filters->filters as $filter_id}
 													{var $filter_data = get_term($filter_id, 'ait-items_filters', "OBJECT")}
 													{if $filter_data}
 														{var $filter_meta = get_option( "ait-items_filters_category_".$filter_data->term_id )}
 														{var $filter_icon = isset($filter_meta['icon']) ? $filter_meta['icon'] : ""}
-														{? array_push($meta->features, array(
-															"icon" => $filter_icon,
-															"text" => $filter_data->name,
-															"desc" => $filter_data->description
-														))}
+														{? array_push($licences, $filter_data->name)}
 													{/if}
 												{/foreach}
 											{/if}
 										{/if}
 
-										{if !is_array($meta->features)}
-											{var $meta->features = array()}
-										{/if}
-										
-										{if count($meta->features) > 0}
+
+										{if is_array($licences) && count($licences) > 0}
 										<div class="item-features">
-											<div class="label">{__ 'Features:'}</div>
+											<div class="label">{__ 'Licences group:'}</div>
 											<div class="value">
 												<ul class="item-filters">
-												{foreach $meta->features as $filter}
-													{var $imageClass = $filter['icon'] != '' ? 'has-image' : ''}
-													{var $textClass = $filter['text'] != '' ? 'has-text' : ''}
+													{foreach $licences as $filter}
 
-													<li class="item-filter {$imageClass} {$textClass}">
-														{if $filter['icon'] != ''}
-														<i class="fa {$filter['icon']}"></i>
-														{/if}
-														<span class="filter-hover">
-															{!$filter['text']}
-														</span>
+													<li class="item-filter">
+													<span class="filter-hover">
+														{!$filter}
+													</span>
 
 													</li>
-												{/foreach}
+													{/foreach}
 												</ul>
 											</div>
 										</div>
