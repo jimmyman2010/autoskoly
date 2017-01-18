@@ -56,9 +56,9 @@
 		</div><!-- .detail-content -->
 
 		<footer class="entry-footer">
-			{if $wp->isSingle and $post->author->bio and $post->author->isMulti}
+			{*if $wp->isSingle and $post->author->bio and $post->author->isMulti}
 				{includePart parts/author-bio}
-			{/if}
+			{/if*}
 		</footer><!-- .entry-footer -->
 
 		{includePart parts/pagination location => nav-below}

@@ -334,7 +334,7 @@
 
 			</footer><!-- .entry-footer -->
 
-			{includePart parts/author-bio}
+			{*includePart parts/author-bio*}
 
 
 		</article>
