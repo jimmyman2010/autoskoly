@@ -17,7 +17,7 @@ return array(
 	'featuredItem' => array(
 		'label'        => __('Item Featured', 'ait-toolkit'),
 		'type'         => 'on-off',
-		'default'      => true,
+		'default'      => false,
 		'capabilities' => true,
 	),
 
