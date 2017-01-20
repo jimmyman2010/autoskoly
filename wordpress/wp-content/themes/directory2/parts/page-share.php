@@ -9,7 +9,7 @@
 
 {foreach array_filter((array) $options->theme->social->socIcons) as $icon}
 	{if AitUtils::contains($icon->url, 'twitter')}
-		{var $search = array('https', 'http', 'www.twitter.com/', 'twitter.com/', 't.co/')}
+		{var $search = array('https://', 'http://', 'www.twitter.com/', 'twitter.com/', 't.co/')}
 		{var $twitterReferral = str_replace($search, '', $icon->url)}
 	{/if}
 {/foreach}

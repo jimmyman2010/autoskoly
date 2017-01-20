@@ -60,6 +60,11 @@
     display: block;
 }
 
+.item-container .item-categories:before{
+    content: "\f0ac";
+    /*content: "\f278";*/
+}
+
 @media screen and (min-width: 769px) {
     .reviews-container .review-ratings{
         margin-top: -59px;
