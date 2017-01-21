@@ -190,4 +190,7 @@
     .top-bar{
         display: none;
     }
+    .header-container .site-logo {
+        padding-top: 20px;
+    }
 }
