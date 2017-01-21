@@ -61,15 +61,15 @@
 									{capture $titleName}
 										{capture $searchTitle}<span class="title-data">{!implode(", ", $sString)}</span>{/capture}
 										{if count($sString) > 0}
-										{!__ 'Search Results for: %s'|printf: $searchTitle}
+										{!__ 'Výsledky vyhľadávania: %s'|printf: $searchTitle}
 										{else}
-										{!__ 'Search Results: %s'|printf: $searchTitle}
+										{!__ 'Výsledky vyhľadávania: %s'|printf: $searchTitle}
 										{/if}
 									{/capture}
 								{else}
 									{capture $titleName}
 										{capture $searchTitle}<span class="title-data">{$wp->searchQuery}</span>{/capture}
-										{!__ 'Search Results for: %s'|printf: $searchTitle}
+										{!__ 'Výsledky vyhľadávania: %s'|printf: $searchTitle}
 									{/capture}
 								{/if}
 							{/if}

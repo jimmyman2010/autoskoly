@@ -9,15 +9,15 @@
 
 {var $filterCounts = array(5, 10, 20)}
 
-{capture $dateLabel}{__ 'Date'}{/capture}
-{capture $titleLabel}{__ 'Title'}{/capture}
+{capture $dateLabel}{__ 'Dátumu pridania'}{/capture}
+{capture $titleLabel}{__ 'Názvu'}{/capture}
 
 {var $filterOrderBy = array(
 	"title" => $titleLabel
 )}
 
 {if defined('AIT_REVIEWS_ENABLED') and $postType != 'ait-event-pro'}
-	{capture $ratingLabel}{__ 'Rating'}{/capture}
+	{capture $ratingLabel}{__ 'Hodnotenia'}{/capture}
 	{? $filterOrderBy["rating"] = $ratingLabel}
 {/if}
 
@@ -31,17 +31,18 @@
 {* VARIABLES *}
 
 <div class="filters-wrap">
-	{if $postType == "ait-event-pro"}
+	{*if $postType == "ait-event-pro"}
 		<h2>{!_x 'Showing %1$s from %2$s Upcoming Events', 'event pro taxonomy'|printf: $current, $max}</h2>
 	{else}
 		<h2>{!_x 'Showing %1$s from %2$s Items', 'item taxonomy'|printf: $current, $max}</h2>
-	{/if}
+	{/if*}
+	<h2>Typy vodičákov (skupiny)</h2>
 	<div class="filters-container">
 		<div class="content">
 			{if $postType != 'ait-event-pro'}
 			<div class="filter-container filter-count" data-filterid="count">
 				<div class="content">
-					<div class="selected">{__ 'Count'}:</div>
+					<div class="selected">{__ 'Počet výsledkov'}:</div>
 					<select class="filter-data">
 						{foreach $filterCounts as $filter}
 							{if $filter == $filterCountsSelected}
@@ -56,7 +57,7 @@
 			{/if}
 			<div class="filter-container filter-orderby" data-filterid="orderby">
 				<div class="content">
-					<div class="selected">{__ 'Sort by'}:</div>
+					<div class="selected">{__ 'Triediť podľa'}:</div>
 					<select class="filter-data">
 						{foreach $filterOrderBy as $key => $filter}
 							{if $key == $filterOrderBySelected}
@@ -71,7 +72,7 @@
 			</div>
 			<div class="filter-container filter-order" data-filterid="order">
 				<div class="content">
-					<div class="selected title">{__ 'Order'}:</div>
+					<div class="selected title">{__ 'Zoradiť'}:</div>
 					<a n:class='$filterOrderSelected == "ASC" ? selected' title="ASC" href="#" data-value="ASC"><i class="fa fa-angle-down"></i></a>
 					<a n:class='$filterOrderSelected == "DESC" ? selected' title="DESC" href="#" data-value="DESC"><i class="fa fa-angle-up"></i></a>
 				</div>
@@ -133,4 +134,6 @@
 			</script>
 		</div>
 	</div>
+	<br clear="all">
+	<div class="filter-description">Vyberte si skupinu podľa vašej potreby a klinknite na tlačitko "Zobraziť"</div>
 </div>

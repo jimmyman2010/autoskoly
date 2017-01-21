@@ -66,13 +66,13 @@ return array(
 	),
 
 	'address' => array(
-		'label'        => __('Address', 'ait-toolkit'),
+		'label'        => __('Adresa', 'ait-toolkit'),
 		'type'         => 'string',
 		'help'         => __('Address related to item', 'ait-toolkit'),
 	),
 
 	'web' => array(
-		'label'        => __('Website', 'ait-toolkit'),
+		'label'        => __('Webová stránka', 'ait-toolkit'),
 		'type'         => 'url',
 		'default'      => '',
 		'capabilities' => true,
@@ -96,7 +96,7 @@ return array(
 	),
 
 	'telephone' => array(
-		'label'        => __('Phone Number', 'ait-toolkit'),
+		'label'        => __('Telefónne číslo', 'ait-toolkit'),
 		'type'         => 'string',
 		'capabilities' => true,
 		'help'         => __('Phone number related to item', 'ait-toolkit'),
@@ -118,30 +118,36 @@ return array(
 	),*/
 
 	'fax' => array(
-		'label'        => __('Fax Number', 'ait-toolkit'),
+		'label'        => __('Fax', 'ait-toolkit'),
 		'type'         => 'string',
 		'help'         => __('Fax number related to item', 'ait-toolkit'),
 	),
 
 	'mobilePhone' => array(
-		'label'        => __('Mobile Phone Number', 'ait-toolkit'),
+		'label'        => __('Mobil', 'ait-toolkit'),
 		'type'         => 'string',
 		'help'         => __('Mobile phone number related to item', 'ait-toolkit'),
 	),
 
 	'languagesOffered' => array(
-		'label'        => __('Languages offered', 'ait-toolkit'),
+		'label'        => __('Výuka v jazykoch', 'ait-toolkit'),
 		'type'         => 'string',
 		'default'      => '',
 	),
 
 	'lengthOfCourse' => array(
-		'label'        => __('Length of the course', 'ait-toolkit'),
+		'label'        => __('Dĺžka kurzu', 'ait-toolkit'),
 		'type'         => 'string',
 		'default'      => '',
 	),
 
-	array('section' => array('id' => 'itemOpeningHours', 'title' => __('Opening Hours', 'ait-toolkit'), 'capabilities' => true)),
+	'vozidla' => array(
+		'label'        => __('Vozidlá', 'ait-toolkit'),
+		'type'         => 'string',
+		'default'      => '',
+	),
+
+	array('section' => array('id' => 'itemOpeningHours', 'title' => __('Otváracie hodiny', 'ait-toolkit'), 'capabilities' => true)),
 
 	'displayOpeningHours' => array(
 		'label'   => __('Show', 'ait-toolkit'),
@@ -152,43 +158,43 @@ return array(
 	),
 
 	'openingHoursMonday' => array(
-		'label' => __('Monday', 'ait-toolkit'),
+		'label' => __('Pondelok', 'ait-toolkit'),
 		'type'  => 'text',
 		'basic' => true,
 	),
 
 	'openingHoursTuesday' => array(
-		'label' => __('Tuesday', 'ait-toolkit'),
+		'label' => __('Utorok', 'ait-toolkit'),
 		'type'  => 'text',
 		'basic' => true,
 	),
 
 	'openingHoursWednesday' => array(
-		'label' => __('Wednesday', 'ait-toolkit'),
+		'label' => __('Streda', 'ait-toolkit'),
 		'type'  => 'text',
 		'basic' => true,
 	),
 
 	'openingHoursThursday' => array(
-		'label' => __('Thursday', 'ait-toolkit'),
+		'label' => __('Štvrtok', 'ait-toolkit'),
 		'type'  => 'text',
 		'basic' => true,
 	),
 
 	'openingHoursFriday' => array(
-		'label' => __('Friday', 'ait-toolkit'),
+		'label' => __('Piatok', 'ait-toolkit'),
 		'type'  => 'text',
 		'basic' => true,
 	),
 
 	'openingHoursSaturday' => array(
-		'label' => __('Saturday', 'ait-toolkit'),
+		'label' => __('Sobota', 'ait-toolkit'),
 		'type'  => 'text',
 		'basic' => true,
 	),
 
 	'openingHoursSunday' => array(
-		'label' => __('Sunday', 'ait-toolkit'),
+		'label' => __('Nedeľa', 'ait-toolkit'),
 		'type'  => 'text',
 		'basic' => true,
 	),

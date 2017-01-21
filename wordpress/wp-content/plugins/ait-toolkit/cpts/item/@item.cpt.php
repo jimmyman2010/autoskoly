@@ -47,14 +47,15 @@ return array(
 				'edit_private_posts'     => 'ait_toolkit_items_edit_private_items',
 				'edit_published_posts'   => 'ait_toolkit_items_edit_published_items',
 			),
+			'rewrite' => array('slug' => 'autoskoly')
 		),
 	),
 
 	'taxonomies' => array(
 		'items' => array(
 			'labels' => array(
-				'name'              => _x('Cities', 'taxonomy general name', 'ait-toolkit'),
-				'menu_name'         => _x('Cities', 'taxonomy menu name', 'ait-toolkit'),
+				'name'              => _x('Mestá', 'taxonomy general name', 'ait-toolkit'),
+				'menu_name'         => _x('Mestá', 'taxonomy menu name', 'ait-toolkit'),
 				'singular_name'     => _x('City', 'taxonomy singular name', 'ait-toolkit'),
 				'search_items'      => __('Search Cities', 'ait-toolkit'),
 				'all_items'         => __('All Cities', 'ait-toolkit'),
@@ -81,8 +82,8 @@ return array(
 
 		'locations' => array(
 			'labels' => array(
-				'name'              => _x('Regions', 'taxonomy general name', 'ait-toolkit'),
-				'menu_name'         => _x('Regions', 'taxonomy menu name', 'ait-toolkit'),
+				'name'              => _x('Kraje', 'taxonomy general name', 'ait-toolkit'),
+				'menu_name'         => _x('Kraje', 'taxonomy menu name', 'ait-toolkit'),
 				'singular_name'     => _x('Region', 'taxonomy singular name', 'ait-toolkit'),
 				'search_items'      => __('Search Categories', 'ait-toolkit'),
 				'all_items'         => __('All Regions', 'ait-toolkit'),

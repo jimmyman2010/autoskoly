@@ -36,7 +36,7 @@
 
 								<div class="item-image">
 									<a class="main-link" href="{$post->permalink}">
-										<span>{__ 'View Detail'}</span>
+										<span>{__ 'Otvoriť'}</span>
 										{if $post->image}
 										<img src="{imageUrl $post->imageUrl, width => 200, height => 240, crop => 1}" alt="Featured">
 										{else}
@@ -106,7 +106,7 @@
 									</div>
 									<div class="item-footer">
 										<div class="item-address">
-											<span class="label">{__ 'Location:'}</span>
+											<span class="label">{__ 'Lokalita'}:</span>
 											<span class="value">
 												{var $terms = get_the_terms($post->id, 'ait-items')}
 												{foreach $terms as $index => $term}
@@ -122,7 +122,7 @@
 
 										{if $meta->languagesOffered}
 										<div class="item-web">
-											<span class="label">{__ 'Languages offered:'}</span>
+											<span class="label">{__ 'Výuka v jazykoch'}:</span>
 											<span class="value">{$meta->languagesOffered}</span>
 										</div>
 										{/if}
@@ -147,7 +147,7 @@
 
 										{if is_array($licences) && count($licences) > 0}
 										<div class="item-features">
-											<div class="label">{__ 'Licences group:'}</div>
+											<div class="label">{__ 'Typy vodičákov'}:</div>
 											<div class="value">
 												<ul class="item-filters">
 													{foreach $licences as $filter}

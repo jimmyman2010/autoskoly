@@ -10,7 +10,7 @@
 <div class="reviews-container {$ratingsDisplayedClass} {$ratingFormShownClass}" id="review">
 	{if $options->theme->itemReviews->onlyRegistered}
 		{if is_user_logged_in()}
-			<h2><?php _e('Leave a Review', 'ait') ?></h2>
+			<h2><?php _e('Ohodnodte autoškolu', 'ait') ?></h2>
 
 			{* CURRENT RATING *}
 			{*var $current_rating_count = intval(get_post_meta($post->id, 'rating_count', true))*}
@@ -28,13 +28,13 @@
 
 			{includePart portal/parts/single-item-reviews-form}
 		{else}
-			<h2><?php _e('Leave a Review', 'ait') ?></h2>
+			<h2><?php _e('Ohodnodte autoškolu', 'ait') ?></h2>
 			<div class="current-rating-container review-stars-container">
 				<h3>{!$options->theme->itemReviews->onlyRegisteredMessage}</h3>
 			</div>
 		{/if}
 	{else}
-		<h2><?php _e('Leave a Review', 'ait') ?></h2>
+		<h2><?php _e('Ohodnodte autoškolu', 'ait') ?></h2>
 
 		{* CURRENT RATING *}
 		{*var $current_rating_count = intval(get_post_meta($post->id, 'rating_count', true))*}

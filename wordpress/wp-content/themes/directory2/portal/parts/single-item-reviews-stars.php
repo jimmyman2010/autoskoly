@@ -14,11 +14,11 @@
 			{* RICH SNIPPETS *}
 			<span class="review-stars" data-score="{$rating_mean}"></span>
 			{if $showCount}<span class="review-count">({$rating_count})</span>{/if}
-			<a href="{$post->permalink}#review"><?php _e('Submit your rating', 'ait-item-reviews') ?></a>
+			<a href="{$post->permalink}#review"><?php _e('Ohodnoť autoškolu', 'ait-item-reviews') ?></a>
 		</div>
 	{else}
 		<div class="content rating-text-shown">
-			<a href="{$post->permalink}#review"><?php _e('Submit your rating', 'ait-item-reviews') ?></a>
+			<a href="{$post->permalink}#review"><?php _e('Ohodnoť autoškolu', 'ait-item-reviews') ?></a>
 		</div>
 	{/if}
 </div>

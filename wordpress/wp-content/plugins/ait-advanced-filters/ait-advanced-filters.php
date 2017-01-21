@@ -162,7 +162,8 @@ class AitAdvancedFilters {
 	/* TYPE REGISTRATION */
 	public static function registerTax(){
 		$labels = array(
-			'name'				=> _x( 'Licences', 'taxonomy general name', 'ait-advanced-filters' ),
+			'name'				=> _x( 'Typy vodičákov', 'taxonomy general name', 'ait-advanced-filters' ),
+			'menu_name'			=> __( 'Typy vodičákov', 'ait-advanced-filters' ),
 			'singular_name'		=> _x( 'Licence', 'taxonomy singular name', 'ait-advanced-filters' ),
 			'search_items'		=> __( 'Search Licences', 'ait-advanced-filters' ),
 			'all_items'			=> __( 'All Licences', 'ait-advanced-filters' ),
@@ -172,7 +173,6 @@ class AitAdvancedFilters {
 			'update_item'		=> __( 'Update Licence', 'ait-advanced-filters' ),
 			'add_new_item'		=> __( 'Add New Licence', 'ait-advanced-filters' ),
 			'new_item_name'		=> __( 'New Licence Name', 'ait-advanced-filters' ),
-			'menu_name'			=> __( 'Licences', 'ait-advanced-filters' ),
 		);
 
 		$capabilities = array(

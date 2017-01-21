@@ -7,14 +7,14 @@
 
 		{if !$meta->web && $settings->addressHideEmptyFields}{else}
 		<div class="address-row row-web">
-			<div class="address-name"><h5>{__ 'Website'}:</h5></div>
+			<div class="address-name"><h5>{__ 'Webová stránka'}:</h5></div>
 			<div class="address-data"><p>{if $meta->web}<a href="{$meta->web}" target="_blank" itemprop="url" {if $settings->addressWebNofollow}rel="nofollow"{/if}>{if $meta->webLinkLabel}{$meta->webLinkLabel}{else}{$meta->web}{/if}</a>{else}-{/if}</p></div>
 		</div>
 		{/if}
 
 		{if !$meta->telephone && $settings->addressHideEmptyFields}{else}
 		<div class="address-row row-telephone">
-			<div class="address-name"><h5>{__ 'Phone number'}:</h5></div>
+			<div class="address-name"><h5>{__ 'Telefónne číslo'}:</h5></div>
 			<div class="address-data">
 				{if $meta->telephone}
 				<p>
@@ -30,7 +30,7 @@
 
 		{if !$meta->fax && $settings->addressHideEmptyFields}{else}
 		<div class="address-row row-telephone">
-			<div class="address-name"><h5>{__ 'Fax number'}:</h5></div>
+			<div class="address-name"><h5>{__ 'Fax'}:</h5></div>
 			<div class="address-data">
 				{if $meta->fax}
 				<p>
@@ -46,7 +46,7 @@
 
 		{if !$meta->mobilePhone && $settings->addressHideEmptyFields}{else}
 		<div class="address-row row-telephone">
-			<div class="address-name"><h5>{__ 'Mobile phone number'}:</h5></div>
+			<div class="address-name"><h5>{__ 'Mobil'}:</h5></div>
 			<div class="address-data">
 				{if $meta->mobilePhone}
 				<p>
@@ -66,7 +66,7 @@
 			{var address = $meta->address}
 		{/if}
 		<div class="address-row row-postal-address" itemscope itemtype="http://schema.org/PostalAddress">
-			<div class="address-name"><h5>{__ 'Address'}:</h5></div>
+			<div class="address-name"><h5>{__ 'Adresa'}:</h5></div>
 			<div class="address-data" itemprop="streetAddress"><p>{if $address}{$address}{else}-{/if}</p></div>
 		</div>
 		{/if}
@@ -111,7 +111,7 @@
 		{var $terms = get_the_terms($post->id, 'ait-items')}
 		{if $terms}
 		<div class="address-row row-city">
-			<div class="address-name"><h5>{__ 'City'}:</h5></div>
+			<div class="address-name"><h5>{__ 'Mesto'}:</h5></div>
 			<div class="address-data">
 
 				{foreach $terms as $index => $term}
@@ -126,7 +126,7 @@
 		{var $terms = get_the_terms($post->id, 'ait-locations')}
 		{if $terms}
 		<div class="address-row row-region">
-			<div class="address-name"><h5>{__ 'Region'}:</h5></div>
+			<div class="address-name"><h5>{__ 'Kraj'}:</h5></div>
 			<div class="address-data">
 
 				{foreach $terms as $index => $term}
@@ -139,11 +139,11 @@
 		{/if}
 
 		{if !$meta->languagesOffered && $settings->addressHideEmptyFields}{else}
-		<div class="address-row row-email">
-			<div class="address-name"><h5>{__ 'Languages offered'}:</h5></div>
+		<div class="address-row row-languages-offered">
+			<div class="address-name"><h5>{__ 'Výuka v jazykoch'}:</h5></div>
 			<div class="address-data">
 				{if $meta->languagesOffered != ""}
-					<p><span itemprop="offer">{$meta->languagesOffered}</span></p>
+					<p><span itemprop="languageOffered">{$meta->languagesOffered}</span></p>
 				{else}
 					<p>-</p>
 				{/if}
@@ -171,7 +171,7 @@
 
 		{if is_array($licences) && count($licences) > 0}
 		<div class="address-row row-licence">
-			<div class="address-name"><h5>{__ 'Licence groups'}:</h5></div>
+			<div class="address-name"><h5>{__ 'Typy vodičákov'}:</h5></div>
 			<div class="address-data">
 				{foreach $licences as $index => $filter}
 				{if $index > 0}, {/if}<span>{!$filter}</span>
@@ -181,11 +181,24 @@
 		{/if}
 
 		{if !$meta->lengthOfCourse && $settings->addressHideEmptyFields}{else}
-		<div class="address-row row-email">
-			<div class="address-name"><h5>{__ 'Length of the course'}:</h5></div>
+		<div class="address-row row-length-of-course">
+			<div class="address-name"><h5>{__ 'Dĺžka kurzu'}:</h5></div>
 			<div class="address-data">
 				{if $meta->lengthOfCourse != ""}
-				<p><span itemprop="offer">{$meta->lengthOfCourse}</span></p>
+				<p><span itemprop="lengthOfCourse">{$meta->lengthOfCourse}</span></p>
+				{else}
+				<p>-</p>
+				{/if}
+			</div>
+		</div>
+		{/if}
+
+		{if !$meta->vozidla && $settings->addressHideEmptyFields}{else}
+		<div class="address-row row-email">
+			<div class="address-name"><h5>{__ 'Vozidlá'}:</h5></div>
+			<div class="address-data">
+				{if $meta->vozidla != ""}
+				<p><span itemprop="lengthOfCourse">{$meta->vozidla}</span></p>
 				{else}
 				<p>-</p>
 				{/if}

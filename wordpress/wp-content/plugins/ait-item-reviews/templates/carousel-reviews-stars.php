@@ -9,7 +9,7 @@
 				<span class="review-stars" data-score="{$rating_mean}"></span>
 				{if $showCount}<span class="review-count">({$rating_count})</span>{/if}
 			{else}
-				<a href="{$item->permalink}#review"><?php _e('Rate now','ait-item-reviews') ?></a>
+				<a href="{$item->permalink}#review"><?php _e('Ohodnoť autoškolu','ait-item-reviews') ?></a>
 			{/if}
 		</div>
 	</div>

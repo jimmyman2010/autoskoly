@@ -1,9 +1,9 @@
 {if $meta->displayOpeningHours}
 <div class="elm-opening-hours-main">
-	<h2>{__ 'Opening Hours'}</h2>
+	<h2>{__ 'Otváracie hodiny'}</h2>
 	<div class="day-container">
 		<div class="day-wrapper">
-			<div class="day-title"><h5>{__ 'Monday'}</h5></div>
+			<div class="day-title"><h5>{__ 'Pondelok'}</h5></div>
 			{var $monday = AitLangs::getCurrentLocaleText($meta->openingHoursMonday)}
 			<div class="day-data">
 				<p>
@@ -14,7 +14,7 @@
 			</div>
 		</div>
 		<div class="day-wrapper">
-			<div class="day-title"><h5>{__ 'Tuesday'}</h5></div>
+			<div class="day-title"><h5>{__ 'Utorok'}</h5></div>
 			{var $tuesday = AitLangs::getCurrentLocaleText($meta->openingHoursTuesday)}
 			<div class="day-data">
 				<p>
@@ -25,7 +25,7 @@
 			</div>
 		</div>
 		<div class="day-wrapper">
-			<div class="day-title"><h5>{__ 'Wednesday'}</h5></div>
+			<div class="day-title"><h5>{__ 'Streda'}</h5></div>
 			{var $wednesday = AitLangs::getCurrentLocaleText($meta->openingHoursWednesday)}
 			<div class="day-data">
 				<p>
@@ -36,7 +36,7 @@
 			</div>
 		</div>
 		<div class="day-wrapper">
-			<div class="day-title"><h5>{__ 'Thursday'}</h5></div>
+			<div class="day-title"><h5>{__ 'Štvrtok'}</h5></div>
 			{var $thursday = AitLangs::getCurrentLocaleText($meta->openingHoursThursday)}
 			<div class="day-data">
 				<p>
@@ -47,7 +47,7 @@
 			</div>
 		</div>
 		<div class="day-wrapper">
-			<div class="day-title"><h5>{__ 'Friday'}</h5></div>
+			<div class="day-title"><h5>{__ 'Piatok'}</h5></div>
 			{var $friday = AitLangs::getCurrentLocaleText($meta->openingHoursFriday)}
 			<div class="day-data">
 				<p>
@@ -58,7 +58,7 @@
 			</div>
 		</div>
 		<div class="day-wrapper day-sat">
-			<div class="day-title"><h5>{__ 'Saturday'}</h5></div>
+			<div class="day-title"><h5>{__ 'Sobota'}</h5></div>
 			{var $saturday = AitLangs::getCurrentLocaleText($meta->openingHoursSaturday)}
 			<div class="day-data">
 				<p>
@@ -69,7 +69,7 @@
 			</div>
 		</div>
 		<div class="day-wrapper day-sun">
-			<div class="day-title"><h5>{__ 'Sunday'}</h5></div>
+			<div class="day-title"><h5>{__ 'Nedeľa'}</h5></div>
 			{var $sunday = AitLangs::getCurrentLocaleText($meta->openingHoursSunday)}
 			<div class="day-data">
 				<p>
