@@ -6,7 +6,7 @@
 .reviews-container .review-ratings{
     padding: 11px 0;
     background-color: rgba(0,0,0,0.1);
-    height: 68px;
+    height: 59px;
 }
 
 .review-stars .fa, .review-rating-stars .fa, .review-rating-overall .fa{
@@ -30,7 +30,7 @@
 }
 
 .reviews-container .review-rated-stars{
-    margin-top: 8px;
+    margin-top: 2px;
     display: block;
 }
 
@@ -102,12 +102,6 @@
     width: calc(100% - 10px);
 }
 
-@media screen and (min-width: 641px) {
-    .reviews-container .review-ratings{
-        height: auto;
-    }
-}
-
 @media screen and (min-width: 769px) {
     .reviews-container h2{
         text-align: left;
@@ -123,6 +117,9 @@
     .reviews-container .reviews-form-container:after,
     .reviews-container h2:after{
         width: 45%;
+    }
+    .reviews-container .review-rated-stars{
+        margin-top: 7px;
     }
 
     .tablet{
