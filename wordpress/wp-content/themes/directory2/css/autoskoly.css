@@ -97,6 +97,11 @@
     padding-right: 20px;
 }
 
+.search-form-type-1 .elm-search-form .search-inputs-wrap{
+    width: -webkit-calc(100% - 10px);
+    width: calc(100% - 10px);
+}
+
 @media screen and (min-width: 641px) {
     .reviews-container .review-ratings{
         height: auto;
