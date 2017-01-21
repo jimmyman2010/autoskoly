@@ -135,5 +135,5 @@
 		</div>
 	</div>
 	<br clear="all">
-	<div class="filter-description">Vyberte si skupinu podľa vašej potreby a klinknite na tlačitko "Zobraziť"</div>
+	<div class="filter-description">Vyberte si skupinu podľa vašej potreby a kliknite na tlačitko "Zobraziť"</div>
 </div>

@@ -1,4 +1,4 @@
-.lang-en_US .reviews-container .review-rating-question{
+.reviews-container .review-rating-question{
     font-size: 24px;
     display: none;
 }
@@ -30,13 +30,16 @@
 }
 
 .reviews-container .review-rated-stars{
-    float: right;
     margin-top: 8px;
+    display: block;
 }
 
 .reviews-container .review-rated-stars i{
-    margin-left: 7px;
-    font-size: 15px;
+    margin-left: 10px;
+    font-size: 26px;
+}
+.reviews-container .review-rated-stars i:first-child{
+    margin-left: 0;
 }
 
 .single-ait-item .elm-easy-slider-main{
@@ -178,5 +181,11 @@
     .single-ait-item .address-container h2:after{
         position: static;
         margin-left: 10px;
+    }
+}
+
+@media (max-width: 968px) {
+    .top-bar{
+        display: none;
     }
 }

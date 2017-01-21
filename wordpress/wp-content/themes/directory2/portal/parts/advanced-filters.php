@@ -78,7 +78,7 @@ if($advancedFiltersOptions->enabled){
 				</div>
 			</div>
 			<div class="advanced-filters-actions">
-				<a href="#" class="filter-action-filterme ait-sc-button"><?php _e('Filter', 'ait-advanced-filters') ?></a>
+				<a href="#" class="filter-action-filterme ait-sc-button"><?php _e('Zobraziť', 'ait-advanced-filters') ?></a>
 			</div>
 
 			<script type="text/javascript">
