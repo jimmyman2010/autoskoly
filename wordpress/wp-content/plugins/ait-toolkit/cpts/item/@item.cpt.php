@@ -58,7 +58,7 @@ return array(
 				'menu_name'         => _x('Mestá', 'taxonomy menu name', 'ait-toolkit'),
 				'singular_name'     => _x('City', 'taxonomy singular name', 'ait-toolkit'),
 				'search_items'      => __('Search Cities', 'ait-toolkit'),
-				'all_items'         => __('All Cities', 'ait-toolkit'),
+				'all_items'         => __('Mestá', 'ait-toolkit'),
 				'parent_item'       => __('Parent City', 'ait-toolkit'),
 				'parent_item_colon' => __('Parent City:', 'ait-toolkit'),
 				'edit_item'         => __('Edit City', 'ait-toolkit'),
@@ -69,7 +69,7 @@ return array(
 			),
 			'args' => array(
 				'rewrite' => array(
-					'slug' => 'cat',
+					'slug' => 'mesto',
 				),
 				'capabilities' => array(
 					'manage_terms' => 'ait_toolkit_items_category_manage_items',
@@ -86,7 +86,7 @@ return array(
 				'menu_name'         => _x('Kraje', 'taxonomy menu name', 'ait-toolkit'),
 				'singular_name'     => _x('Region', 'taxonomy singular name', 'ait-toolkit'),
 				'search_items'      => __('Search Categories', 'ait-toolkit'),
-				'all_items'         => __('All Regions', 'ait-toolkit'),
+				'all_items'         => __('Kraje', 'ait-toolkit'),
 				'parent_item'       => __('Parent Region', 'ait-toolkit'),
 				'parent_item_colon' => __('Parent Region:', 'ait-toolkit'),
 				'edit_item'         => __('Edit Region', 'ait-toolkit'),
@@ -97,7 +97,7 @@ return array(
 			),
 			'args' => array(
 				'rewrite' => array(
-					'slug' => 'loc',
+					'slug' => 'kraj',
 				),
 				'capabilities' => array(
 					'manage_terms' => 'ait_toolkit_items_category_manage_locations',
