@@ -429,7 +429,7 @@
 
 			</div>
 
-			{*includePart parts/breadcrumbs*}
+			{includePart parts/breadcrumbs}
 
 		</header><!-- /.entry-header -->
 
