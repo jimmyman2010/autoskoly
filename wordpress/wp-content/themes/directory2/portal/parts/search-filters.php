@@ -104,13 +104,14 @@
 					count: {$filterCountsSelected},
 					orderby: 'date',
 					order: 'ASC'
-				}
+				};
 				jQuery('.filters-container .filter-container').each(function(){
 					var key = jQuery(this).data('filterid');
+					var val;
 					if(key == "order"){
-						var val = jQuery(this).find('a.selected').data('value');
+						val = jQuery(this).find('a.selected').data('value');
 					} else {
-						var val = jQuery(this).find('select option:selected').attr('value');
+						val = jQuery(this).find('select option:selected').attr('value');
 					}
 					data[key] = val;
 				});
@@ -119,8 +120,12 @@
 				var baseUrl = window.location.protocol+"//"+window.location.host+window.location.pathname;
 				var eParams = window.location.search.replace("?", "").split('&');
 				var nParams = {};
+				var flag = true;
 				jQuery.each(eParams, function(index, value){
 					var val = value.split("=");
+					if(val[0] === 's'){
+						flag = false;
+					}
 					if(typeof val[1] == "undefined"){
 						nParams[val[0]] = "";
 					} else {
@@ -129,6 +134,9 @@
 				});
 				var query = jQuery.extend({}, nParams, data);
 				var queryString = jQuery.param(query);
+				if(window.location.pathname === '/' && flag) {
+					baseUrl += 'autoskoly/';
+				}
 				window.location.href = baseUrl + "?" + queryString;
 			}
 			</script>
