@@ -120,8 +120,12 @@ if($advancedFiltersOptions->enabled){
 					var baseUrl = window.location.protocol+"//"+window.location.host+pathName;
 					var eParams = window.location.search.replace("?", "").split('&');
 					var nParams = {};
+					var flag = true;
 					jQuery.each(eParams, function(index, value){
 						var val = value.split("=");
+						if(val[0] === 's' || val[0] === 'category' || val[0] === 'location'){
+							flag = false;
+						}
 						if(typeof val[1] == "undefined"){
 							nParams[val[0]] = "";
 						} else {
@@ -143,6 +147,9 @@ if($advancedFiltersOptions->enabled){
 					});
 
 					var queryString = jQuery.param(query);
+					if(window.location.pathname === '/' && flag) {
+						baseUrl += 'autoskoly/';
+					}
 					window.location.href = baseUrl + "?" + queryString;
 				});
 			});

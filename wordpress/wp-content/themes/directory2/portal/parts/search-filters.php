@@ -123,7 +123,7 @@
 				var flag = true;
 				jQuery.each(eParams, function(index, value){
 					var val = value.split("=");
-					if(val[0] === 's'){
+					if(val[0] === 's' || val[0] === 'category' || val[0] === 'location'){
 						flag = false;
 					}
 					if(typeof val[1] == "undefined"){

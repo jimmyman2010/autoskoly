@@ -102,7 +102,31 @@
     width: calc(100% - 10px);
 }
 
+.nav-menu-main > ul .button--header{
+    margin-left: 0;
+    margin-top: -14px;
+    font-size: 0;
+    display: none !important;
+}
+.nav-menu-main > ul .button--header a{
+    padding-bottom: 0;
+}
+.nav-menu-main > ul .button--header a:after{
+    display: none;
+}
+.nav-menu-main > ul .button--header a img{
+    padding-right: 0;
+    margin-top: 0;
+}
+
 @media screen and (min-width: 769px) {
+    .nav-menu-main > ul .button--header{
+        display: inline-block !important;
+    }
+    .sticky-menu .nav-menu-main > ul .button--header{
+        display: none !important;
+    }
+
     .reviews-container h2{
         text-align: left;
     }
