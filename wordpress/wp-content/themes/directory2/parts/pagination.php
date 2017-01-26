@@ -2,8 +2,8 @@
 {* COMMON DATA                                               *}
 {* ********************************************************* *}
 
-	{capture $navPrevText}{!_x '%s Previous', 'previous' |printf: '<span class="meta-nav">&larr;</span>'}{/capture}
-	{capture $navNextText}{!_x 'Next %s', 'next' |printf: '<span class="meta-nav">&rarr;</span>'}{/capture}
+	{capture $navPrevText}{!_x '%s Predchádzajúci', 'previous' |printf: '<span class="meta-nav">&larr;</span>'}{/capture}
+	{capture $navNextText}{!_x 'Nasledujúci %s', 'next' |printf: '<span class="meta-nav">&rarr;</span>'}{/capture}
 
 	{if !isset($location)} {var $location = ''} {/if}
 	{if !isset($arrow)} {var $arrow = ''} {/if}
