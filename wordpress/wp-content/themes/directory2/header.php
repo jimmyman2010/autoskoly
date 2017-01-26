@@ -23,8 +23,9 @@
 
 	{!$options->theme->header->customJsCode}
 
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
 	<link type="text/css" rel="stylesheet" href="/wp-content/themes/directory2/css/autoskoly.css" />
-	<script type="text/javascript" src="/wp-content/themes/directory2/js/autoskoly.js"></script>
+	<script defer type="text/javascript" src="/wp-content/themes/directory2/js/autoskoly.js"></script>
 </head>
 
 {var $searchFormClass = ""}
@@ -73,7 +74,13 @@
 						<nav class="main-nav menu-hidden" role="navigation" data-menucollapse={$options->theme->header->menucollapse}>
 
 							<div class="main-nav-wrap">
-								<h3 class="menu-toggle">{__ 'Menu'}</h3>
+								<h3 class="menu-toggle">{__ 'jedálny lístok'}</h3>
+
+								<a class="button--header" href="/pre-majitelov-autoskol/">
+									<span>Pre majiteľov autoškôl</span>
+									<span>Pridať autoškolu do našej databázy</span>
+								</a>
+
 								{menu main}
 							</div>
 						</nav>
