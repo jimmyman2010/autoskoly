@@ -36,7 +36,6 @@
 	{else}
 		<h2>{!_x 'Showing %1$s from %2$s Items', 'item taxonomy'|printf: $current, $max}</h2>
 	{/if*}
-	<h2>Typy vodičákov (skupiny)</h2>
 	<div class="filters-container">
 		<div class="content">
 			{if $postType != 'ait-event-pro'}
@@ -142,6 +141,6 @@
 			</script>
 		</div>
 	</div>
-	<br clear="all">
+	<h2>Typy vodičákov (skupiny)</h2>
 	<div class="filter-description">Vyberte si skupinu podľa vašej potreby a kliknite na tlačitko "Zobraziť"</div>
 </div>

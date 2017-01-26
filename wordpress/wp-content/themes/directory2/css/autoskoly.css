@@ -83,10 +83,16 @@
 
 .filters-wrap h2,
 .filters-wrap .filters-container{
-    margin-bottom: 5px;
+    float: none;
+}
+.filters-wrap h2{
+    margin-bottom: 0;
+}
+.filters-wrap .filters-container{
+    margin-bottom: 10px;
 }
 .filter-description{
-    margin-bottom: 35px;
+    margin-bottom: 20px;
 }
 
 .reviews-container h2 {
@@ -255,5 +261,11 @@
     }
     .header-container .site-logo {
         padding-top: 65px;
+    }
+
+    .search-results .page-title,
+    .tax-ait-items .page-title,
+    .tax-ait-locations .page-title{
+        display: none;
     }
 }
