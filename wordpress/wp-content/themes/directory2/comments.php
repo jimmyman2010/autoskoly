@@ -1,6 +1,6 @@
 <div id="comments" class="comments-area">
 {if $post->hasComments}
-	<h2 class="comments-title">{__ 'Comments (%s)'|printf:$post->commentsNumber}</h2>
+	<h2 class="comments-title">{__ 'Komentáre (%s)'|printf:$post->commentsNumber}</h2>
 
 	<ol class="commentlist">
 	{loopComments as $comment}
@@ -8,7 +8,7 @@
 		{if !$comment->isNormal}
 
 		<li {!$comment->htmlClass} {!$comment->htmlId('li-')}>
-			{capture $editLinkLabel}({__ 'Edit'}){/capture}
+			{capture $editLinkLabel}({__ 'Editovať'}){/capture}
 			<p>{__ 'Pingback:'} {!$comment->author->link} <span class="edit-link">{!$comment->editLink($editLinkLabel)}</span></p>
 
 		{else}
@@ -28,9 +28,9 @@
 					</div><!-- .comment-meta -->
 
 					<div class="comment-tools">
-						{capture $replyLinkLabel}<span class="reply">{!__ 'Reply'}</span>{/capture}
+						{capture $replyLinkLabel}<span class="reply">{!__ 'Odpoveď'}</span>{/capture}
 						{!$comment->replyLink($replyLinkLabel)}
-						{capture $editLinkLabel}<span class="edit-link">{!__ 'Edit'}</span>{/capture}
+						{capture $editLinkLabel}<span class="edit-link">{!__ 'Editovať'}</span>{/capture}
 	      				{!$comment->editLink($editLinkLabel)}
 					</div>
 
@@ -38,7 +38,7 @@
 
 				<div class="entry-content comment-content">
 					{if !$comment->isApproved}
-						<p class="comment-awaiting-moderation">{__ 'Your comment is awaiting moderation.'}</p>
+						<p class="comment-awaiting-moderation">{__ 'Váš príspevok čaká na schválenie administrátorom stránky. Ďakujeme za vašu trpezlivosť.'}</p>
 					{else}
 						{!$comment->text}
 					{/if}
@@ -55,14 +55,14 @@
 
 	{if $post->willCommentsPaginate}
 	<nav class="navigation comment-navigation" role="navigation">
-		<h1 class="assistive-text section-heading">{__ 'Comment navigation'}</h1>
-		<div class="nav-previous">{prevCommentsLink '&larr; Older Comments'}</div>
-		<div class="nav-next">{nextCommentsLink 'Newer Comments &rarr;'}</div>
+		<h1 class="assistive-text section-heading">{__ 'Komentár navigácia'}</h1>
+		<div class="nav-previous">{prevCommentsLink '&larr; Staršie komentáre'}</div>
+		<div class="nav-next">{nextCommentsLink 'Novšie komentáre &rarr;'}</div>
 	</nav>
 	{/if}
 
 	{if $post->hasCommentsClosed}
-		<p class="nocomments">{__ 'Comments are closed.'}</p>
+		<p class="nocomments">{__ 'Komentáre sú zavreté.'}</p>
 	{/if}
 {/if}
 

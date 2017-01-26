@@ -184,7 +184,7 @@
 
 					<div class="entry-content loop">
 						{!$post->excerpt}
-						<a href="{$post->permalink}" class="more">{!__ 'read more'}</a>
+						<a href="{$post->permalink}" class="more">{!__ 'Čítaj ďalej'}</a>
 					</div><!-- .entry-content -->
 
 <!-- 					<footer class="entry-footer">
@@ -219,7 +219,7 @@
 
 							{if $post->hasImage}
 								<div class="more-wrap">
-									<a href="{$post->permalink}" class="more">{!__ 'read more'}</a>
+									<a href="{$post->permalink}" class="more">{!__ 'Čítaj ďalej'}</a>
 								</div>
 							{/if}
 
@@ -236,7 +236,7 @@
 								<span class="featured-post">{__ 'Featured post'}</span>
 							{/if}
 
-							{capture $editLinkLabel}<span class="edit-link">{!__ 'Edit'}</span>{/capture}
+							{capture $editLinkLabel}<span class="edit-link">{!__ 'Editovať'}</span>{/capture}
 	      					{!$post->editLink($editLinkLabel)}
 						</div>
 
@@ -268,7 +268,7 @@
 
 					{if !$post->hasImage}
 						<div class="more-wrap no-thumbnail">
-							<a href="{$post->permalink}" class="more">{!__ 'read more'}</a>
+							<a href="{$post->permalink}" class="more">{!__ 'Čítaj ďalej'}</a>
 						</div>
 					{/if}
 

@@ -219,7 +219,7 @@
 
 	{* TITLE ********** *} {if $wp->isCategory}					{capture $titleName}
 																	{capture $categoryTitle}<span class="title-data">{!$category->title}</span>{/capture}
-																	{!__ 'Category Archives: %s'|printf: $categoryTitle}
+																	{!__ 'Blog: %s'|printf: $categoryTitle}
 																{/capture}
 
 	{* TITLE ********** *} {elseif $wp->isTax(items) or $wp->isTax(locations) or $wp->isTax(ait-events-pro)}
@@ -239,7 +239,7 @@
 																{/capture}
 	{* TITLE ********** *} {elseif $wp->isTax}					{capture $titleName}
 																	{capture $taxonomyTitle}<span class="title-data">{$taxonomyTerm->title}</span>{/capture}
-																	{!__ 'Category Archives: %s'|printf: $taxonomyTitle}
+																	{!__ 'Blog: %s'|printf: $taxonomyTitle}
 																{/capture}
 	{* TITLE ********** *} {elseif $wp->isAuthor}				{capture $titleName}
 																	{capture $authorTitle}<span class="title-data">{$author}</span>{/capture}
