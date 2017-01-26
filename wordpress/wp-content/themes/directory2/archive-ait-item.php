@@ -58,7 +58,7 @@
 											<span class="subtitle">{AitLangs::getCurrentLocaleText($meta->subtitle)}</span>
 										</div>
 
-										{var $target = $meta->socialIconsOpenInNewWindow ? 'target="_blank"' : ""}
+										{*var $target = $meta->socialIconsOpenInNewWindow ? 'target="_blank"' : ""}
 										{if $meta->displaySocialIcons}
 
 												<div class="social-icons-container">
@@ -77,7 +77,7 @@
 													</div>
 												</div>
 
-										{/if}
+										{/if*}
 
 										{if count($categories) > 0}
 										<div class="item-categories">
@@ -105,20 +105,6 @@
 										</div>
 									</div>
 									<div class="item-footer">
-										<div class="item-address">
-											<span class="label">{__ 'Lokalita'}:</span>
-											<span class="value">
-												{var $terms = get_the_terms($post->id, 'ait-items')}
-												{foreach $terms as $index => $term}
-													<span>{$term->name}</span>,
-												{/foreach}
-
-												{var $terms = get_the_terms($post->id, 'ait-locations')}
-												{foreach $terms as $index => $term}
-													{if $index > 0}, {/if}<span>{$term->name}</span>
-												{/foreach}
-											</span>
-										</div>
 
 										{if $meta->languagesOffered}
 										<div class="item-web">
