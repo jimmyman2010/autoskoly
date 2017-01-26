@@ -119,6 +119,12 @@
     margin-top: 0;
 }
 
+.advertisement,
+.advertisement .widget-title,
+.advertisement .textwidget{
+    padding: 0 !important;
+}
+
 @media screen and (min-width: 769px) {
     .nav-menu-main > ul .button--header{
         display: inline-block !important;
