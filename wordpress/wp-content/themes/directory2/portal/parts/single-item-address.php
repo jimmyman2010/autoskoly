@@ -194,11 +194,37 @@
 		{/if}
 
 		{if !$meta->vozidla && $settings->addressHideEmptyFields}{else}
-		<div class="address-row row-email">
+		<div class="address-row row-vozidla">
 			<div class="address-name"><h5>{__ 'Vozidlá'}:</h5></div>
 			<div class="address-data">
 				{if $meta->vozidla != ""}
-				<p><span itemprop="lengthOfCourse">{$meta->vozidla}</span></p>
+				<p><span itemprop="vozidla">{$meta->vozidla}</span></p>
+				{else}
+				<p>-</p>
+				{/if}
+			</div>
+		</div>
+		{/if}
+
+		{if !$meta->trenazer && $settings->addressHideEmptyFields}{else}
+		<div class="address-row row-trenazer">
+			<div class="address-name"><h5>{__ 'Trenažer'}:</h5></div>
+			<div class="address-data">
+				{if $meta->trenazer != ""}
+				<p><span itemprop="trenazer">{$meta->trenazer}</span></p>
+				{else}
+				<p>-</p>
+				{/if}
+			</div>
+		</div>
+		{/if}
+
+		{if !$meta->kurzPrvejPomoci && $settings->addressHideEmptyFields}{else}
+		<div class="address-row row-kurzPrvejPomoci">
+			<div class="address-name"><h5>{__ 'Kurz prvej pomoci'}:</h5></div>
+			<div class="address-data">
+				{if $meta->kurzPrvejPomoci != ""}
+				<p><span itemprop="kurzPrvejPomoci">{$meta->kurzPrvejPomoci}</span></p>
 				{else}
 				<p>-</p>
 				{/if}

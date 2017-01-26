@@ -125,6 +125,21 @@
     padding: 0 !important;
 }
 
+.social-icons .contact a{
+    width: auto;
+    background: none;
+    color: #1D70A3;
+    margin-top: 3px;
+}
+.social-icons .contact a i{
+    position: static;
+
+    -moz-transform: translate(0,0);
+    -webkit-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    transform: translate(0,0);
+}
+
 @media screen and (min-width: 769px) {
     .nav-menu-main > ul .button--header{
         display: inline-block !important;

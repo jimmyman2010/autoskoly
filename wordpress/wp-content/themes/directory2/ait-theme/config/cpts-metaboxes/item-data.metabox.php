@@ -147,6 +147,18 @@ return array(
 		'default'      => '',
 	),
 
+	'trenazer' => array(
+		'label'        => __('Trenažer', 'ait-toolkit'),
+		'type'         => 'string',
+		'default'      => '',
+	),
+
+	'kurzPrvejPomoci' => array(
+		'label'        => __('Kurz prvej pomoci', 'ait-toolkit'),
+		'type'         => 'string',
+		'default'      => '',
+	),
+
 	array('section' => array('id' => 'itemOpeningHours', 'title' => __('Otváracie hodiny', 'ait-toolkit'), 'capabilities' => true)),
 
 	'displayOpeningHours' => array(

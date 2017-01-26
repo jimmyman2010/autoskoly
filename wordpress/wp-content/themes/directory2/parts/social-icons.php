@@ -1,6 +1,10 @@
 {if $options->theme->social->enableSocialIcons}
 <div class="social-icons">
-	<ul><!--
+	<ul>
+		<li class="contact">
+			<a href="mailto:kontakt@autoskoly.sk"><i class="fa fa-envelope"></i> kontakt@autoskoly.sk</a>
+		</li>
+		<!--
 		{foreach array_filter((array) $options->theme->social->socIcons) as $icon}
 			--><li>
 				<a href="{$icon->url}" {if $options->theme->social->socIconsNewWindow}target="_blank"{/if} class="icon-{$iterator->getCounter()}">
