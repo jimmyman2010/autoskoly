@@ -312,3 +312,21 @@ function custom_front_page($wp_query){
 	endif;
 
 }
+
+
+function autoskoly_post_link( $post_link, $id = 0 ){
+	$post = get_post($id);
+	if ( is_object( $post ) ){
+		$terms = wp_get_object_terms( $post->ID, 'ait-locations' );
+		if( $terms ){
+			$post_link = str_replace( '%ait-locations%' , $terms[0]->slug , $post_link );
+		}
+		$terms = wp_get_object_terms( $post->ID, 'ait-items' );
+		if( $terms ){
+			$post_link = str_replace( '%ait-items%' , $terms[0]->slug , $post_link );
+		}
+
+	}
+	return $post_link;
+}
+add_filter( 'post_type_link', 'autoskoly_post_link', 1, 3 );
