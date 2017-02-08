@@ -132,7 +132,12 @@ if($advancedFiltersOptions->enabled){
 							nParams[val[0]] = decodeURIComponent(val[1]);
 						}
 					});
-					var query = jQuery.extend({}, nParams, { filters: filterString });
+					var query = jQuery.extend({
+						's': '',
+						'category': '',
+						'location': '',
+						'a': true
+					}, nParams, { filters: filterString });
 					if(filterCheck == 0){
 						delete query.filters;
 					}
@@ -147,9 +152,6 @@ if($advancedFiltersOptions->enabled){
 					});
 
 					var queryString = jQuery.param(query);
-					if(window.location.pathname === '/' && flag) {
-						baseUrl += 'autoskoly/';
-					}
 					window.location.href = baseUrl + "?" + queryString;
 				});
 			});

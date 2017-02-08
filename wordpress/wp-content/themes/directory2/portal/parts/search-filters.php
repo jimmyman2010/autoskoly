@@ -131,11 +131,13 @@
 						nParams[val[0]] = decodeURI(val[1]);
 					}
 				});
-				var query = jQuery.extend({}, nParams, data);
+				var query = jQuery.extend({
+					's': '',
+					'category': '',
+					'location': '',
+					'a': true
+				}, nParams, data);
 				var queryString = jQuery.param(query);
-				if(window.location.pathname === '/' && flag) {
-					baseUrl += 'autoskoly/';
-				}
 				window.location.href = baseUrl + "?" + queryString;
 			}
 			</script>
