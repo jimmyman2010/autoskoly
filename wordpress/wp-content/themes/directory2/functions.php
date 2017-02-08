@@ -325,8 +325,16 @@ function autoskoly_post_link( $post_link, $id = 0 ){
 		if( $terms ){
 			$post_link = str_replace( '%ait-items%' , $terms[0]->slug , $post_link );
 		}
+		$post_link = str_replace( '/autoskoly/' , '/' , $post_link );
 
 	}
 	return $post_link;
 }
 add_filter( 'post_type_link', 'autoskoly_post_link', 1, 3 );
+
+add_action('parse_query', 'set_custom_isvars');
+function set_custom_isvars( $query ) {
+	if ( ! empty( $query->query['name'] ) ) {
+		$query->set( 'post_type', array( 'post', 'ait-item', 'page' ) );
+	}
+}

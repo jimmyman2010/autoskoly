@@ -360,9 +360,9 @@
 						<!--div class="cat-icon"><span {if !empty($categoryColor)}style="background: {!$categoryColor};"{/if}><img src="{$categoryIcon}" alt="{!titleName}"></span></div-->
 					{*/if*}
 					{if $logo}
-						<div class="cat-icon">
+						<div class="logo-icon">
 							<span>
-								<img src="{imageUrl $logo, width => 100, height => 100, crop => 1}" alt="">
+								<img src="{imageUrl $logo, height => 200}" alt="">
 							</span>
 						</div>
 					{/if}

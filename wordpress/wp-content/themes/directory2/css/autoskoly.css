@@ -151,6 +151,14 @@
     display: none;
 }
 
+.logo-icon{
+    float: left;
+    margin-right: 15px;
+}
+.logo-icon img{
+    max-height: 70px;
+}
+
 @media screen and (min-width: 769px) {
 
     .reviews-container h2{

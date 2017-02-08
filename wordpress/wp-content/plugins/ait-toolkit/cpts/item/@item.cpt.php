@@ -47,7 +47,7 @@ return array(
 				'edit_private_posts'     => 'ait_toolkit_items_edit_private_items',
 				'edit_published_posts'   => 'ait_toolkit_items_edit_published_items',
 			),
-			'rewrite' => array('slug' => '%ait-locations%/%ait-items%')
+			'rewrite' => array('slug' => 'autoskoly/%ait-locations%/%ait-items%')
 		),
 	),
 
