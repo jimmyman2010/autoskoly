@@ -24,7 +24,7 @@ return array(
 	'headerType' => array(
 		'label'    => __('Item Header', 'ait-toolkit'),
 		'type'     => 'select',
-		'selected' => 'map',
+		'selected' => 'none',
 		'default' => array(
 			'none'  => __('No header', 'ait-toolkit'),
 			'map'   => __('Map', 'ait-toolkit'),
@@ -96,7 +96,7 @@ return array(
 	),
 
 	'telephone' => array(
-		'label'        => __('Telefónne číslo', 'ait-toolkit'),
+		'label'        => __('Telefónne �?íslo', 'ait-toolkit'),
 		'type'         => 'string',
 		'capabilities' => true,
 		'help'         => __('Phone number related to item', 'ait-toolkit'),
