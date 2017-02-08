@@ -160,7 +160,7 @@
 
 				{/customLoop}
 
-				{includePart parts/pagination, location => pagination-below, max => $query->max_num_pages}
+				{*includePart parts/pagination, location => pagination-below, max => $query->max_num_pages*}
 			</div>
 		</div>
 
