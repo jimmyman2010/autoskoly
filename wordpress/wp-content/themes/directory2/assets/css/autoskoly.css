@@ -159,6 +159,61 @@
     max-height: 70px;
 }
 
+.gform_body input[type="text"],
+.gform_body select,
+.gform_body textarea,
+.gform_body .sbHolder{
+    border: 1px solid #E3E3E3 !important;
+    width: 100% !important;
+}
+
+.elm-opening-hours-main .day-title h5 {
+    font-size: 14px !important;
+    line-height: 24px !important;
+}
+
+.elm-opening-hours-main .day-data p{
+    font-size: 14px;
+}
+
+.item-footer .item-features .filter-hover{
+    font-size: 100%;
+    color: #333;
+}
+
+.ait-sc-button .icon{
+    padding: 9px 0 9px 20px;
+}
+.ait-sc-button .icon .fa{
+    font-size: 24px;
+    line-height: 24px;
+}
+
+.bbcol > ul,
+.bbcol > ul ul{
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+.bbcol > ul li {
+    padding: 0 0 10px 30px;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.bbcol > ul li:before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: url(../../design/img/lists.png) -60px 0 no-repeat #1d70a3;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 @media screen and (min-width: 769px) {
 
     .reviews-container h2{
@@ -201,6 +256,19 @@
         float: left;
         width: 33.33%;
         padding: 5px;
+    }
+
+    .small-advertisement .textwidget{
+        padding: 17px 17px 0 !important;
+    }
+    .small-advertisement a {
+        float: left;
+        width: 50%;
+        padding: 3px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        line-height: 1px;
     }
 }
 

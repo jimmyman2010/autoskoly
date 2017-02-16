@@ -73,7 +73,7 @@
 		</div>
 		<div class="review-notifications">
 			<div class="review-notification review-notification-sending ait-sc-notification info"><?php _e('Publishing ...', 'ait-item-reviews') ?></div>
-			<div class="review-notification review-notification-success ait-sc-notification success"><?php _e('Your rating has been successfully sent', 'ait-item-reviews') ?></div>
+			<div class="review-notification review-notification-success ait-sc-notification success"><?php _e('Vaše hodnotenie bolo úspešne odoslané', 'ait-item-reviews') ?></div>
 			<div class="review-notification review-notification-error ait-sc-notification error"><?php _e('Please fill out all fields', 'ait-item-reviews') ?></div>
 		</div>
 		<script type="text/javascript">

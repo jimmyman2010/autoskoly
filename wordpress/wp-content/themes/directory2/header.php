@@ -24,8 +24,8 @@
 	{!$options->theme->header->customJsCode}
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
-	<link type="text/css" rel="stylesheet" href="/wp-content/themes/directory2/css/autoskoly.css" />
-	<script defer type="text/javascript" src="/wp-content/themes/directory2/js/autoskoly.js"></script>
+	<link type="text/css" rel="stylesheet" href="/wp-content/themes/directory2/assets/css/autoskoly.css" />
+	<script defer type="text/javascript" src="/wp-content/themes/directory2/assets/js/autoskoly.js"></script>
 </head>
 
 {var $searchFormClass = ""}
