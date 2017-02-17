@@ -2278,13 +2278,13 @@ WpLatteBreadcrumbs {
             }
         }
         elseif (is_404()) {
-            $trail[] = __('404 Not Found', 'wplatte');
+            $trail[] = __('404 Nenájdené', 'wplatte');
         }
         if (is_paged()) {
-            $trail[] = sprintf(__('Page %d', 'wplatte'), absint(get_query_var('paged')));
+            $trail[] = sprintf(__('Strana %d', 'wplatte'), absint(get_query_var('paged')));
         }
         elseif (is_singular() && 1 < get_query_var('page')) {
-            $trail[] = sprintf(__('Page %d', 'wplatte'), absint(get_query_var('page')));
+            $trail[] = sprintf(__('Strana %d', 'wplatte'), absint(get_query_var('page')));
         }
         return
             apply_filters('WpLatteBreadcrumbsItems', $trail, $args);
