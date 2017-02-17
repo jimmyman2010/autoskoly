@@ -34,3 +34,23 @@ function checkCookie() {
         }
     }
 }
+
+(function($){
+    $(window).on('load scroll', function(){
+        var top = $(window).scrollTop();
+        if(top > 50){
+            $('body').addClass('not-top');
+        } else {
+            $('body').removeClass('not-top');
+        }
+    });
+
+    $('nav.nav-single a').each(function(i, e){
+        var href = $(this).attr('href');
+        if(href.indexOf('/page/') >= 0){
+            if(href.indexOf('?s') >= 0){} else {
+                $(this).attr('href', href += '?s=&a=true');
+            }
+        }
+    });
+})(jQuery);

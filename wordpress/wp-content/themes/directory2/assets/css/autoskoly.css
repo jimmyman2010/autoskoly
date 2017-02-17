@@ -143,12 +143,19 @@
     font-weight: 300;
     padding: 5px 10px;
     text-align: center;
+    -webkit-transition: top 0.2s;
+    -moz-transition: top 0.2s;
+    transition: top 0.2s;
 }
 .button--header span{
     color: white;
 }
 .button--header span:last-child{
     display: none;
+}
+
+.not-top .button--header{
+    top: -40px;
 }
 
 .logo-icon{
@@ -193,6 +200,7 @@
 .bbcol > ul ul{
     list-style-type: none;
     margin-bottom: 20px;
+    margin-left: 10px;
 }
 .bbcol > ul li {
     padding: 0 0 10px 30px;
@@ -210,9 +218,19 @@
     -webkit-border-radius: 100%;
     border-radius: 100%;
     position: absolute;
-    top: 0;
+    top: 3px;
     left: 0;
 }
+
+.entry-content > ul,
+.entry-content > ul ul{
+    margin-left: 10px;
+}
+.entry-content > ul li:before{
+    top: 3px;
+}
+
+
 
 @media screen and (min-width: 769px) {
 
@@ -285,6 +303,7 @@
         display: block;
         color: #1D70A3;
         font-size: 15px;
+        margin-top: 5px;
     }
 }
 
