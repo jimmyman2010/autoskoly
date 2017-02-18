@@ -74,7 +74,7 @@
 						<nav class="main-nav menu-hidden" role="navigation" data-menucollapse={$options->theme->header->menucollapse}>
 
 							<div class="main-nav-wrap">
-								<h3 class="menu-toggle">{__ 'jedálny lístok'}</h3>
+								<h3 class="menu-toggle">{__ 'MENU'}</h3>
 
 								<a class="button--header" href="/pre-majitelov-autoskol/">
 									<span>Pre majiteľov autoškôl</span>
