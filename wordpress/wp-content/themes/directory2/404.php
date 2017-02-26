@@ -4,6 +4,8 @@
 
 	<article id="post-0" class="post error404 no-results not-found">
 		<div class="entry-content">
-			<p>{__ "It seems we can't find what you're looking for."}</p>
+			<p>Ak ste hľadanú stránku (alebo autoškolu) nenašli na našich webových stránkach
+				<a href="/pre-majitelov-autoskol/">budeme radi ak nám napíšete</a>
+				a my vám skúsime čo najskôr poradiť.</p>
 		</div><!-- .entry-content -->
 	</article><!-- #post-0 -->

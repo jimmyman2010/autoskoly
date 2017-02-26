@@ -7,7 +7,7 @@
 <!--<![endif]-->
 <head>
 	<meta charset="{$wp->charset}">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="{$wp->pingbackUrl}">
 

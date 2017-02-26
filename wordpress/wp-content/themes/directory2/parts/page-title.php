@@ -44,7 +44,7 @@
 	{* CLASS ********** *} {if $wp->isSearch}			{var $titleClass = "simple-title"} {/if}
 	{* CLASS ********** *} {if $wp->isWoocommerce()}	{var $titleClass = "simple-title"} {/if}
 
-	{* TITLE ********** *} {if $wp->is404}				{capture $titleName}{__ "This is somewhat embarrassing, isn't it?"}{/capture}			{/if}
+	{* TITLE ********** *} {if $wp->is404}				{capture $titleName}{__ "Hľadaná stránka nebola najdená"}{/capture}			{/if}
 	{* TITLE ********** *} {if $wp->isSearch}
 								{if isset($_REQUEST['a']) && $_REQUEST['a'] != ""}
 									{var $sString = array()}
