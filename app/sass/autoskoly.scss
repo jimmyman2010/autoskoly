@@ -237,9 +237,22 @@
     top: 3px;
 }
 
-
-
+.right-sidebar .elements-sidebar-wrap{
+    padding-top: 30px;
+}
+.vysledky h2{
+    font-size: 26px;
+    line-height: 30px;
+    text-align: center;
+}
+.error404 #post-0 p{
+    text-align: left;
+}
 @media screen and (min-width: 769px) {
+
+    .vysledky h2{
+        display: none;
+    }
 
     .reviews-container h2{
         text-align: left;
@@ -304,13 +317,13 @@
         display: inline-block;
         padding: 4px 10px 3px;
         border-radius: 5px;
-        margin-top: 5px;
+        margin-top: 8px;
     }
     .button--header span:last-child{
         display: block;
         color: #1D70A3;
         font-size: 15px;
-        margin-top: 3px;
+        margin-top: -5px;
     }
 }
 
@@ -322,6 +335,12 @@
     }
 }
 
+@media (max-width: 497px) {
+    .item-container .item-title-wrap,
+    .filters-wrap h2{
+        text-align: left;
+    }
+}
 
 @media (max-width: 640px) {
     .reviews-container h2 {

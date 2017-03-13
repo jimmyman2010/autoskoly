@@ -53,4 +53,14 @@ function checkCookie() {
             }
         }
     });
+
+    var target = $('.search-results .searchsubmit-wrapper');
+    if(target.length > 0){
+        if($(window).width() < 768) {
+            $('html, body').animate({
+                'scrollTop': target.offset().top
+            }, 1000);
+            target.find('.searchsubmit2').html('Hľadaj Znovu');
+        }
+    }
 })(jQuery);

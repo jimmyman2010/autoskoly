@@ -43,7 +43,12 @@ if($advancedFiltersOptions->enabled){
 	<?php
 		if(is_array($filters_avalaible) && count($filters_avalaible) > 0){
 	?>
-		<div class="advanced-filters-wrap">
+			<div class="filters-wrap">
+				<h2>Typy vodičákov (skupiny)</h2>
+				<div class="filter-description">Vyberte si skupinu podľa vašej potreby a kliknite na tlačitko "Zobraziť"</div>
+			</div>
+
+			<div class="advanced-filters-wrap">
 			<div class="advanced-filters-container">
 				<div class="content">
 

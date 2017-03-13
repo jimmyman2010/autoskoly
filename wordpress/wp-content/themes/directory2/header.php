@@ -7,7 +7,7 @@
 <!--<![endif]-->
 <head>
 	<meta charset="{$wp->charset}">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="{$wp->pingbackUrl}">
 
@@ -74,7 +74,7 @@
 						<nav class="main-nav menu-hidden" role="navigation" data-menucollapse={$options->theme->header->menucollapse}>
 
 							<div class="main-nav-wrap">
-								<h3 class="menu-toggle">{__ 'jedálny lístok'}</h3>
+								<h3 class="menu-toggle">{__ 'MENU'}</h3>
 
 								<a class="button--header" href="/pre-majitelov-autoskol/">
 									<span>Pre majiteľov autoškôl</span>

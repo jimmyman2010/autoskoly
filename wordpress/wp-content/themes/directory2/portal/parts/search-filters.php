@@ -143,6 +143,4 @@
 			</script>
 		</div>
 	</div>
-	<h2>Typy vodičákov (skupiny)</h2>
-	<div class="filter-description">Vyberte si skupinu podľa vašej potreby a kliknite na tlačitko "Zobraziť"</div>
 </div>

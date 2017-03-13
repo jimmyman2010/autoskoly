@@ -4,6 +4,9 @@
 
 
 {if $query->have_posts()}
+	<div class="vysledky">
+		<h2>Výsledky vyhľadávania</h2>
+	</div>
 	{includePart portal/parts/search-filters, current => $query->post_count, max => $query->found_posts}
 
 	{if defined("AIT_ADVANCED_FILTERS_ENABLED")}
