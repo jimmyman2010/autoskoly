@@ -1,0 +1,29 @@
+{
+    "name": "Ability",
+    "description": "Graphic design and online marketing consulting",
+    "dependencies": {
+        "gulp": "*",
+        "gulp-compass": "*",
+        "gulp-rename": "*",
+        "gulp-cssnano": "*",
+        "gulp-useref" : "*",
+        "gulp-if": "*",
+        "gulp-uglify": "*",
+
+        "normalize-scss" : "*",
+
+        "gulp-fontmin" : "*",
+
+        "gulp-rimraf": "*",
+
+        "gulp-html-tag-include": "*"
+    },
+    "devDependencies": {
+        "gulp-watch": "*",
+        "browser-sync": "*"
+    },
+    "engines": {
+        "node": ">=0.10.0",
+        "npm": ">=1.2.10"
+    }
+}

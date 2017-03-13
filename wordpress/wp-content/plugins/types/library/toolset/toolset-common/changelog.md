@@ -1,16 +1,46 @@
 # Toolset Common Library
 
+# 2.3
+
+ - Various fixes and adjustments for CRED 1.8.6
+
+## 2.3-Beta3
+
+ - Adds callback methods for wpPointer object onOpen and onClose
+
+## 2.3-Beta2
+
+- Allows user to ask Toolset to load Bootstrap library for them, or alternatively set the Bootstrap version they are using on their own
+
 ## 2.3.0
 
+- layouts-1239: Added Toolset_Admin_Notice_Layouts_Help
 - Extend the post objects relationships management with two actions to gather data on demand.
 - Only include the jQuery datepicker stylesheet on demand when the current page contains a datepicker from Toolset.
 - Include the user editors in the common bootstrap class.
+- toolsetcommon-127: Include knockout.js
+- toolsetcommon-139: Clean up Toolset_Assets_Manager and define constants for asset handles 
+- toolsetcommon-144: Added Toolset_Admin_Notices_Manager
+- toolsetcommon-137: Make the toolset-forms classes autoloaded.
+- toolsetcommon-140: Improve a way to detect the status of WPML.
+
+## 2.2.10
+
+- types-1045: Do not assume field value type in Enlimbo_Form::textfield().
+
+## 2.2.9
+
+- Fix a validation issue for file, audio, video and embed fields affecting Types. 
+  Allow URLs with non-latin characters, but only for URLs that point to attachments
+  from the Media Library (validated by WordPress media upload mechanism) (types-1013).
+- Improve the validation for non-required Skype fields (toolsetcommon-128).
 
 ## 2.2.6
 
 - Fix a CRED issue with added validation rules (types-988).
 - Handle several issues related to using "0" as a default field value and saving it to the database (toolsetcommon-106).
 - Minor compatibility fixes for the upcoming CRED 1.8.4 release.
+- Extend WPToolset_Cake_Validation with the "url2" validation as a counterpart to the validation method in JQuery UI (types-988).
 
 ## 2.2.5 (November 5, 2016)
  
@@ -22,7 +52,7 @@
 
 ## 2.2.3 (October 10, 2016)
 
-- Fixed select2 edge cases when methods are called on non-select2 initialised element
+- Fixed select2 edge cases when methods are called on non-select2 initialised element.
 - Refined special handling of old inputs by making sure target is only a select and not the hidden relative element
 - Extended the valid date formats that Types and CRED supports for the Date field.
 

@@ -7,7 +7,7 @@ Domain Path: /embedded/locale
 License: GPLv2
 Requires at least: 3.7
 Tested up to: 4.7.1
-Stable tag: 2.2.6
+Stable tag: 2.2.8
 
 The complete and reliable plugin for managing custom post types, custom taxonomies and custom fields.
 
@@ -160,7 +160,38 @@ Additionally, Types is the only plugin that lets you define parent/child relatio
 
 == Changelog ==
 
+= 2.2.9 =
+* Added the feature to display posts and pages in Toolset dashboard by default.
+* Added the ability to set the purpose of a View or a WordPress Archive, when creating from the Toolset Dashboard.
+* Added support for user language setting.
+* Renamed "Thumbnail" to "Featured Image" in custom post type edit screen options.
+* Removed non-Types taxonomies from the related section in post type edit screen.
+* Removed "Layouts not compatible with theme" message.
+* Fixed an issue with checkbox user field with option to save 0 to the database
+* Fixed an issue that WordPress Archives created inside Layouts were listed in Views section of Types Information table
+* Fixed a compatibility issue with WPML plugin which was causing duplicate keys in the icl_strings table, when renaming post field groups or post types.
+* Fixed a compatibility issue with UseAnyFont plugin.
+
+= 2.2.8 =
+
+* Fixed an issue where Types saves invalid values in user fields.
+* Added 'custom_css' and 'customize_changeset' to list of excluded post types.
+* Fixed fatal errors with Styling editor and PHP 7.1.
+* Fixed a glitch in Firefox ”a new blank tab was opened when clicking on ‘Skip Feedback’”
+
+= 2.2.7 =
+
+* Fixed a JavaScript error when using a flat taxonomy in the relationship post table.
+* Fixed an issue where no value was stored for checkboxes when option to save 0 was selected.
+* Fixed a validation issue for file, audio, video and embed fields affecting Types. Allowing URLs with non-latin characters, but only for URLs that point to attachments from the Media Library (validated by WordPress media upload mechanism).
+* Removed the "Types Migration" page which was broken and not maintained.
+* Fixed an incompatibility issue with Divi caused by double enqueuing of the jQuery UI Validation plugin.
+* When inserting the types shortcode for an image field, we will always use placeholders for the title and alt text.
+* Fixed an issue in the relationship post table where it wasn't possible to repeatedly set and remove a child post's featured image.
+* Improved how the Types meta fields are registered in the Fields and Views dialog.
+
 = 2.2.6 =
+
 * Updated Installer to 1.7.15.
 * Fix several issues with the Styling editor.
 * Fixed a compatibility with Layouts, child themes of Layouts-integrated themes haven't been recognized as such.
@@ -175,18 +206,21 @@ Additionally, Types is the only plugin that lets you define parent/child relatio
 
 = 2.2.4 =
 
-* Fix an issue with registering custom taxonomies in WordPress 4.7.
-* Implement an alternative escaping mechanism for custom format setting of the date field.
-* types_render_shortcode() function and [types] shortcode now allows to use "id" attribute for $parent-post selection
-* Exclude Media from post relationships since the current GUI isn't able to support it properly
-* Fix exporting taxonomies with legacy "object_type" setting that was causing syntax errors in the output XML.
-* Support all CPTs in Toolset Dashboard.
-* Change the way we store the context of a Types field for string translation (use field group name instead of ID)
-* Fix a WordPress 4.7 compatibility issue with direct access to $wp_filter.
-* Make the manipulation with repetitive user field values more similar to post fields. Fix a front-end notice when there is only one value in a repeating user Skype field.
-* Add missing mandatory URL validation to file fields.
-* Add PHP template example files.
-* Fix an issue with Types export and non-latin characters in a field group slug.
+* Added missing mandatory URL validation to file fields.
+* Added support for all custom post types in Toolset Dashboard.
+* Added support for "id" attribute for $parent-post selection in types_render_shortcode() function and [types] shortcode.
+* Added PHP template example files.
+* Implemented an alternative escaping mechanism for custom format setting of the date field.
+* Changed the way we store the context of a Types field for string translation (use field group name instead of ID).
+* Excluded Media from post relationships since the current GUI isn't able to support it properly.
+* Fixed compatibility issue with registering custom taxonomies in WordPress 4.7.
+* Fixed compatibility issue with direct access to $wp_filter in WordPress 4.7.
+* Fixed taxonomies export with legacy "object_type" setting that was causing syntax errors in the output XML.
+* Fixed manipulation with repetitive user field values making it more similar to post fields.
+* Fixed front-end notice when there is only one value in a repeating user Skype field.
+* Fixed issue with Types export and non-latin characters in a field group slug.
+* Fixed regression on the post parent selector caused by the select2 update.
+* Fixed name display instead of slug in term field group edit pages.
 
 = 2.2.3 =
 
