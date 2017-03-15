@@ -1,0 +1,71 @@
+
+.page-template-default{
+    .header-search-wrap{
+        display: none;
+        @include responsive(767){
+            display: block;
+        }
+    }
+    .breadcrumb{
+        display: none;
+        @include responsive(767){
+            display: block;
+        }
+    }
+}
+
+.page-title {
+    @include old-responsive(640) {
+        padding: 25px 0 0;
+    }
+    .entry-header-left{
+        @include old-responsive(640) {
+            padding-bottom: 15px;
+        }
+    }
+    .page-title-social {
+        @include old-responsive(640) {
+            padding: 20px 0 15px;
+        }
+        li {
+            @include old-responsive(640) {
+                margin: 0 10px;
+            }
+        }
+    }
+}
+
+.bbcol {
+    > ul, > ul ul {
+        list-style-type: none;
+        margin-bottom: 20px;
+        margin-left: 10px;
+    }
+    > ul li {
+        padding: 0 0 10px 30px;
+        position: relative;
+        @include box-sizing(border-box);
+        &:before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            background: url(../../design/img/lists.png) -60px 0 no-repeat #1d70a3;
+            position: absolute;
+            top: 3px;
+            left: 0;
+            @include border-radius(100%);
+        }
+    }
+}
+
+.entry-content {
+    > ul, > ul ul {
+        margin-left: 10px;
+    }
+    > ul li:before{
+        top: 3px;
+    }
+    ol li{
+        list-style-type: decimal;
+    }
+}

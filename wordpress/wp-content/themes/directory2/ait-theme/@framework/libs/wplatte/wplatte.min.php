@@ -2271,10 +2271,10 @@ WpLatteBreadcrumbs {
         }
         elseif (is_search()) {
             if (is_paged()) {
-                $trail[] = '<a href="' . get_search_link() . '" title="' . sprintf(esc_attr__('Výsledky vyhľadávania &quot;%1$s&quot;', 'wplatte'), esc_attr(get_search_query())) . '">' . sprintf(__('Výsledky vyhľadávania &quot;%1$s&quot;', 'wplatte'), esc_attr(get_search_query())) . '</a>';
+                $trail[] = '<a href="' . get_search_link() . '" title="' . sprintf(esc_attr__('Výsledky vyhľadávania: &quot;<span class="string-search">%1$s</span>&quot;', 'wplatte'), esc_attr(get_search_query())) . '">' . sprintf(__('Výsledky vyhľadávania &quot;%1$s&quot;', 'wplatte'), esc_attr(get_search_query())) . '</a>';
             }
             else {
-                $trail[] = sprintf(__('Výsledky vyhľadávania &quot;%1$s&quot;', 'wplatte'), esc_attr(get_search_query()));
+                $trail[] = sprintf(__('Výsledky vyhľadávania: &quot;<span class="string-search">%1$s</span>&quot;', 'wplatte'), esc_attr(get_search_query()));
             }
         }
         elseif (is_404()) {

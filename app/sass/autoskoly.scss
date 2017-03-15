@@ -167,6 +167,18 @@
     .filters-container{
         margin-bottom: 10px;
     }
+
+    ~ .nav-single.pagination-above,
+    ~ .nav-pagination.pagination-above{
+        @include responsive(767) {
+            margin-top: 10px;
+        }
+        @include responsive(969) {
+            margin-top: 20px;
+        }
+    }
+
+
 }
 
 .filter-description{
@@ -283,41 +295,6 @@
     }
 }
 
-.bbcol {
-    > ul, > ul ul {
-        list-style-type: none;
-        margin-bottom: 20px;
-        margin-left: 10px;
-    }
-    > ul li {
-        padding: 0 0 10px 30px;
-        position: relative;
-        @include box-sizing(border-box);
-        &:before {
-            content: "";
-            width: 20px;
-            height: 20px;
-            background: url(../../design/img/lists.png) -60px 0 no-repeat #1d70a3;
-            position: absolute;
-            top: 3px;
-            left: 0;
-            @include border-radius(100%);
-        }
-    }
-}
-
-.entry-content {
-    > ul, > ul ul {
-        margin-left: 10px;
-    }
-    > ul li:before{
-        top: 3px;
-    }
-    ol li{
-        list-style-type: decimal;
-    }
-}
-
 .right-sidebar .elements-sidebar-wrap{
     padding-top: 30px;
 }
@@ -350,7 +327,7 @@
     }
 }
 
-
+@import "pages/page";
 
 @media (max-width: 497px) {
     .item-container .item-title-wrap,
@@ -377,16 +354,24 @@
         text-align: left;
         margin-top: -5px;
     }
-    .single-ait-item .address-row{
-        display: block;
+    .item-container .item-image{
+        display: none;
     }
-    .single-ait-item .address-row:first-child{
-        margin-top: 10px;
-        display: block;
+    .breadcrumbs-enabled .page-title .entry-title-wrap{
+        padding: 0;
     }
-    .single-ait-item .address-container h2:after{
-        position: static;
-        margin-left: 10px;
+    .single-ait-item {
+        .address-row {
+            display: block;
+            &:first-child{
+                margin-top: 10px;
+                display: block;
+            }
+        }
+        .address-container h2:after{
+            position: static;
+            margin-left: 10px;
+        }
     }
     .header-container .site-logo{
         padding-bottom: 30px;

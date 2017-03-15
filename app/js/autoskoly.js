@@ -63,4 +63,9 @@ function checkCookie() {
             target.find('.searchsubmit2').html('Hľadaj Znovu');
         }
     }
+
+    var search = $('body.search');
+    if(search.length > 0){
+        search.find('.string-search').html(search.find('.title-data').text());
+    }
 })(jQuery);

@@ -1,0 +1,687 @@
+
+<include src="partials/meta.html"></include>
+
+
+<body class="page-template-default page page-id-73 page-parent element-sidebars-boundary-start element-content element-comments element-sidebars-boundary-end element-page-title element-revolution-slider element-seo element-header-map element-header-video element-search-form right-sidebar layout-wide sticky-menu-enabled  reviews-enabled search-form-type-1 breadcrumbs-enabled">
+
+<div id="page" class="page-container header-one">
+
+
+
+    <include src="partials/header.html"></include>
+
+
+
+
+
+    <div class="header-layout element-none-enabled">
+        <div class="header-element-wrap">
+        </div>
+        <div class="header-search-wrap">
+
+
+
+
+
+
+
+            <div id="elm-search-form-5-main" class="elm-search-form-main">
+
+
+                <div id="elm-search-form-5" class="elm-search-form">
+
+                    <div id="elm-search-form-5-container" class="search-form-container search-type-1">
+                        <form action="http://demo.autoskoly.sk/" method="get" class="main-search-form">
+
+                            <div class="elm-wrapper">
+                                <div class="inputs-container">
+                                    <div class="search-shadow"></div>
+                                    <div class="search-content">
+                                        <div class="search-inputs-wrap">
+                                            <span class="searchinput-wrap"><input type="text" name="s" id="searchinput-text" placeholder="Názov autoškoly" class="searchinput" value="" /></span>
+
+
+                                            <div class="category-search-wrap" data-position="first">
+                                                <span class="category-clear"><i class="fa fa-times"></i></span>
+
+                                                <select data-placeholder="Mesto" name="category" class="category-search default-disabled" style="display: none;">
+                                                    <option></option>
+                                                    <option value="57">Bardejov</option><option value="5">Bratislava</option><option value="49">Gelnica</option><option value="58">Humenné</option><option value="59">Kežmarok</option><option value="69">Komárno</option><option value="4">Košice</option><option value="70">Levice</option><option value="60">Levoča</option><option value="68">Lužianky</option><option value="53">Markušovce</option><option value="50">Michalovce</option><option value="43">Nitra</option><option value="48">Nižný Klátov</option><option value="73">Nové Zámky</option><option value="61">Poprad</option><option value="56">Prešov</option><option value="51">Rožňava</option><option value="63">Sabinov</option><option value="75">Šaľa</option><option value="54">Smižany</option><option value="52">Spišská Nová Ves</option><option value="64">Stará Ľubovňa</option><option value="74">Šurany</option><option value="65">Svidník</option><option value="62">Svit</option><option value="77">Topoľčany</option><option value="55">Trebišov</option><option value="76">Trnovec nad Váhom</option><option value="67">Vráble</option><option value="66">Vranov nad Topľou</option><option value="72">Vyškovce nad Ipľom</option><option value="78">Zlaté Moravce</option>
+                                                </select>
+                                            </div>
+
+
+                                            <div class="location-search-wrap" data-position="last">
+                                                <span class="location-clear"><i class="fa fa-times"></i></span>
+
+                                                <select data-placeholder="Kraj" name="location" class="location-search default-disabled" style="display: none;">
+                                                    <option></option>
+                                                    <option value="41">Banskobystrický Kraj</option><option value="6">Bratislavský Kraj</option><option value="3">Košický Kraj</option><option value="39">Nitriansky Kraj</option><option value="42">Prešovský Kraj</option><option value="38">Trenčiansky Kraj</option><option value="37">Trnavský Kraj</option><option value="40">Žilinský Kraj</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+
+
+
+
+                                        <input type="hidden" name="a" value="true" /> <!-- Advanced search -->
+                                        <!-- <input type="hidden" name="lang" value="sk"> --> <!-- Advanced search -->
+
+                                        <div class="searchinput search-input-width-hack" style="position: fixed; z-index: 99999; visibility: hidden" data-defaulttext="Názov autoškoly">Názov autoškoly</div>
+                                    </div>
+                                    <div class="searchsubmit-wrapper">
+                                        <div class="submit-main-button">
+                                            <div class="searchsubmit2">Hľadaj</div>
+                                            <input type="submit" value="Hľadaj" class="searchsubmit" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+
+                <script id="elm-search-form-5-script">
+                    //jQuery(window).load(function(){
+                    jQuery(document).ready(function(){
+                        jQuery("#elm-search-form-5-main").addClass('load-finished');
+
+                        /*jQuery('#elm-search-form-5').find('.radius-search').keyup(function(){
+                         var min = jQuery(this).data('min');
+                         var max = jQuery(this).data('max');
+                         var current = jQuery(this).val().replace(/[^0-9\.]/g,'');
+
+                         if (current > max){
+                         jQuery(this).val(max);
+                         } else {
+                         jQuery(this).val(current);
+                         }
+                         });*/
+
+                        var select2Settings = {
+                            dropdownAutoWidth : true
+                        };
+
+                        jQuery('#elm-search-form-5').find('select').select2(select2Settings).on("select2-close", function() {
+                            // fired to the original element when the dropdown closes
+                            jQuery('.select2-drop').removeClass('select2-drop-active');
+
+                            // replace all &nbsp;
+                            var regPattern = "&nbsp;";
+                            jQuery('#elm-search-form-5 .category-search .select2-chosen').html(jQuery('#elm-search-form-5 .category-search .select2-chosen').html().replace(new RegExp(regPattern, "g"), ''));
+                            if(jQuery('#elm-search-form-5 .location-search .select2-chosen').length > 0) {
+                                jQuery('#elm-search-form-5 .location-search .select2-chosen').html(jQuery('#elm-search-form-5 .location-search .select2-chosen').html().replace(new RegExp(regPattern, "g"), ''));
+                            }
+
+                            jQuery('.select2-drop').removeClass('select-position-first').removeClass('select-position-last');
+                        });
+
+                        jQuery('#elm-search-form-5').find('select').select2(select2Settings).on("select2-loaded", function() {
+                            // fired to the original element when the dropdown closes
+                            jQuery('#elm-search-form-5').find('.select2-container').removeAttr('style');
+                        });
+
+                        jQuery('#elm-search-form-5').find('select').select2(select2Settings).on("select2-open", function() {
+                            var selectPosition = jQuery('#elm-search-form-5').find('.select2-dropdown-open').parent().attr('data-position');
+                            jQuery('.select2-drop').addClass('select-position-'+selectPosition);
+                        });
+
+                        if(isMobile()){
+                            jQuery('#elm-search-form-5 .category-search-wrap').find('select').select2(select2Settings).on("select2-selecting", function(val, choice) {
+                                if(val != ""){
+                                    jQuery('#elm-search-form-5').find('.category-clear').addClass('clear-visible');
+                                }
+                            });
+                            jQuery('#elm-search-form-5 .location-search-wrap').find('select').select2(select2Settings).on("select2-selecting", function(val, choice) {
+                                if(val != ""){
+                                    jQuery('#elm-search-form-5').find('.location-clear').addClass('clear-visible');
+                                }
+                            });
+
+                            jQuery('#elm-search-form-5 .category-search-wrap').find('select').select2(select2Settings).on("select2-selecting", function(val, choice) {
+                                if(val != ""){
+                                    // add class
+                                    jQuery('#elm-search-form-5 .category-search-wrap').addClass('option-selected');
+                                }
+                            });
+                            jQuery('#elm-search-form-5 .location-search-wrap').find('select').select2(select2Settings).on("select2-selecting", function(val, choice) {
+                                if(val != ""){
+                                    jQuery('#elm-search-form-5 .location-search-wrap').addClass('option-selected');
+                                }
+                            });
+                        } else {
+                            jQuery('#elm-search-form-5 .category-search-wrap').find('select').select2(select2Settings).on("select2-selecting", function(val, choice) {
+                                if(val != ""){
+                                    // add class
+                                    jQuery('#elm-search-form-5 .category-search-wrap').addClass('option-selected');
+                                }
+                            });
+                            jQuery('#elm-search-form-5 .location-search-wrap').find('select').select2(select2Settings).on("select2-selecting", function(val, choice) {
+                                if(val != ""){
+                                    jQuery('#elm-search-form-5 .location-search-wrap').addClass('option-selected');
+                                }
+                            });
+
+                            jQuery('#elm-search-form-5').find('.category-search-wrap').hover(function(){
+                                if(jQuery(this).find('select').select2("val") != ""){
+                                    jQuery(this).find('.category-clear').addClass('clear-visible');
+                                }
+                            },function(){
+                                if(jQuery(this).find('select').select2("val") != ""){
+                                    jQuery(this).find('.category-clear').removeClass('clear-visible');
+                                }
+                            });
+
+                            jQuery('#elm-search-form-5').find('.location-search-wrap').hover(function(){
+                                if(jQuery(this).find('select').select2("val") != ""){
+                                    jQuery(this).find('.location-clear').addClass('clear-visible');
+                                }
+                            },function(){
+                                if(jQuery(this).find('select').select2("val") != ""){
+                                    jQuery(this).find('.location-clear').removeClass('clear-visible');
+                                }
+                            });
+                        }
+
+                        jQuery('#elm-search-form-5').find('.select2-chosen').each(function(){
+                            jQuery(this).html(jQuery(this).html().replace(new RegExp("&nbsp;", "g"), ''));
+                        });
+
+                        /*jQuery('#elm-search-form-5').find('form').submit(function(){
+                         var $radiusInput = jQuery(this).find('.radius-search');
+                         $radiusInput.attr('value', $radiusInput.val().length == 0 ? $radiusInput.attr('placeholder') : $radiusInput.val());
+                         });*/
+
+                        if(isMobile()){
+                            jQuery('#elm-search-form-5').find('.radius').on('click', function(){
+                                jQuery(this).find('.radius-clear').addClass('clear-visible');
+                            });
+                        } else {
+                            jQuery('#elm-search-form-5').find('.radius').hover(function(){
+                                jQuery(this).find('.radius-clear').addClass('clear-visible');
+                            },function(){
+                                jQuery(this).find('.radius-clear').removeClass('clear-visible');
+                            });
+                        }
+
+                        jQuery('#elm-search-form-5').find('.category-clear').click(function(){
+                            jQuery('#elm-search-form-5').find('.category-search-wrap select').select2("val", "");
+                            jQuery(this).removeClass('clear-visible');
+                            // remove class selected
+                            jQuery('#elm-search-form-5 .category-search-wrap').removeClass('option-selected');
+                        });
+                        jQuery('#elm-search-form-5').find('.location-clear').click(function(){
+                            jQuery('#elm-search-form-5').find('.location-search-wrap select').select2("val", "");
+                            jQuery(this).removeClass('clear-visible');
+                            // remove class selected
+                            jQuery('#elm-search-form-5 .location-search-wrap').removeClass('option-selected');
+                        });
+                        /*jQuery('#elm-search-form-5').find('.radius-clear').click(function(){
+                         jQuery(this).removeClass('clear-visible');
+                         });*/
+
+
+                        /* RADIUS SCRIPT */
+
+                        var lat,
+                                lon,
+                                tmp = [];
+                        window.location.search
+                            //.replace ( "?", "" )
+                            // this is better, there might be a question mark inside
+                                .substr(1)
+                                .split("&")
+                                .forEach(function (item) {
+                                    tmp = item.split("=");
+                                    if (tmp[0] === 'lat'){
+                                        lat = decodeURIComponent(tmp[1]);
+                                    }
+                                    if (tmp[0] === 'lon'){
+                                        lon = decodeURIComponent(tmp[1]);
+                                    }
+                                });
+                        var coordinatesSet = false;
+                        if(typeof lat != 'undefined' & typeof lon != 'undefined') {
+                            coordinatesSet = true;
+                        }
+
+                        var $headerMap = jQuery("#elm-header-map-3-container");
+
+                        var $radiusContainer = jQuery('#elm-search-form-5 .radius');
+                        var $radiusToggle = $radiusContainer.find('.radius-toggle');
+                        var $radiusDisplay = $radiusContainer.find('.radius-display');
+                        var $radiusPopup = $radiusContainer.find('.radius-popup-container');
+
+                        $radiusToggle.click(function(e, invoker){
+                            if(invoker == 'advanced-search') {
+                                coordinatesSet = true;
+                            }
+                            jQuery(this).removeClass('radius-input-visible').addClass('radius-input-hidden');
+                            $radiusContainer.find('input').each(function(){
+                                jQuery(this).removeAttr('disabled');
+                            });
+                            $radiusDisplay.removeClass('radius-input-hidden').addClass('radius-input-visible');
+
+                            $radiusDisplay.trigger('click');
+
+                            $radiusDisplay.find('.radius-value').html($radiusPopup.find('input').val());
+                            $radiusPopup.find('.radius-value').html($radiusPopup.find('input').val());
+                        });
+
+                        $radiusDisplay.click(function(){
+                            $radiusPopup.removeClass('radius-input-hidden').addClass('radius-input-visible');
+                            if(!coordinatesSet) {
+                                setGeoData();
+                            }
+                        });
+                        $radiusDisplay.find('.radius-clear').click(function(e){
+                            e.stopPropagation();
+                            $radiusDisplay.removeClass('radius-input-visible').addClass('radius-input-hidden');
+                            $radiusContainer.find('input').each(function(){
+                                jQuery(this).attr('disabled', true);
+                            });
+                            $radiusPopup.find('.radius-popup-close').trigger('click');
+                            $radiusToggle.removeClass('radius-input-hidden').addClass('radius-input-visible');
+                            $radiusContainer.removeClass('radius-set');
+                        });
+                        $radiusPopup.find('.radius-popup-close').click(function(e){
+                            e.stopPropagation();
+                            $radiusPopup.removeClass('radius-input-visible').addClass('radius-input-hidden');
+                        });
+                        $radiusPopup.find('input').change(function(){
+                            $radiusDisplay.find('.radius-value').html(jQuery(this).val());
+                            $radiusPopup.find('.radius-value').html(jQuery(this).val());
+                        });
+
+                        /* RADIUS SCRIPT */
+
+
+                    });
+
+                    function setGeoData() {
+                        if(navigator.geolocation) {
+                            navigator.geolocation.getCurrentPosition(function(position) {
+                                var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                                jQuery("#latitude-search").attr('value', pos.lat());
+                                jQuery("#longitude-search").attr('value', pos.lng());
+                            });
+                        }
+                    }
+                </script>
+
+            </div>	</div>
+    </div>
+    <div id="main" class="elements">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="page-title share-enabled subtitle-missing">
+
+            <div class="grid-main">
+                <div class="grid-table">
+                    <div class="grid-row">
+                        <header class="entry-header ">
+                            <div class="entry-header-left">
+
+                                <div class="entry-title standard-title">
+
+                                    <div class="entry-title-wrap">
+
+                                        <!--div class="cat-icon"><span ><img src="" alt="titleName"></span></div-->
+
+                                        <h1>Pre majiteľov autoškôl</h1>
+
+
+
+
+
+
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+
+                            <div class="breadcrumb">
+                                <!-- <div class="grid-main"> -->
+                                <nav class="breadcrumbs"><span class="breadcrumbs-before">Nachádzate sa:</span> <span class="breadcrumb-begin"><a href="http://demo.autoskoly.sk" title="Autoškoly SK" rel="home" class="breadcrumb-begin">Úvod</a></span> <span class="sep">/</span> <span class="breadcrumb-end">Pre majiteľov autoškôl</span></nav>
+                                <!-- </div> -->
+                            </div>
+
+                        </header><!-- /.entry-header -->
+
+                        <!-- page title social icons -->
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="page-title-social">
+                            <div class="page-share">
+
+                                <ul class="share-icons">
+
+                                    <li class="share-facebook">
+                                        <a href="#" onclick="javascript:window.open('https://www.facebook.com/sharer/sharer.php?u=http://demo.autoskoly.sk/pre-majitelov-autoskol/', '_blank', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li><li class="share-twitter">
+                                    <a href="#" onclick="javascript:window.open('https://twitter.com/intent/tweet?text=Pre%20majite%C4%BEov%20auto%C5%A1k%C3%B4l&amp;url=http://demo.autoskoly.sk/pre-majitelov-autoskol/&amp;via=', '_blank', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li><li class="share-gplus">
+                                    <a href="#" onclick="javascript:window.open('https://plus.google.com/share?url=http://demo.autoskoly.sk/pre-majitelov-autoskol/', '_blank', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
+
+                                </ul>
+
+                                <div class="share-text">
+                                    <span class="title">Share</span> <span class="subtitle">this page</span>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <!-- page title social icons -->
+
+                    </div>
+                    <div class="right-bck"></div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="main-sections">
+
+
+            <div class="elements-with-sidebar">
+                <div class="grid-main">
+                    <div class="elements-sidebar-wrap">
+                        <div class="right-bck"></div>
+                        <div class="elements-area">
+
+
+                            <section id="elm-content-7-main" class="elm-main elm-content-main ">
+
+                                <div class="elm-wrapper elm-content-wrapper">
+
+                                    <div id="primary" class="content-area">
+                                        <div id="content" class="content-wrap" role="main">
+
+
+
+                                            <article  id="page-73"  class="content-block">
+
+
+                                                <div class="entry-content">
+                                                    <div class="one_half bbcol">
+                                                        <h3>Staňte sa aj Vy súčasťou (čoskoro) najväčšej databázy autoškôl na Slovensku.</h3>
+                                                        <p>Ak vlastníte alebo prevádzkujete autoškolu v Slovenskej republike, nepremeškajte jedinečnú možnosť, ako sa zviditeľniť na internete. V roku 2017 sme si dali za cieľ stať sa najväčšou databázou autoškôl na Slovensku. Naším prvoradým cieľom je pomôct záujemcom o získanie vodičškého oprávnenia vybrať si tú správnu autoškolu.</p>
+                                                        <p><img class="wp-image-146 size-large aligncenter" src="http://demo.autoskoly.sk/wp-content/uploads/Autoskoly-Slovenska-v03-Wide-1024x448.jpg" alt="Autoškoly Slovenskej Republiky" width="1024" height="448" srcset="http://demo.autoskoly.sk/wp-content/uploads/Autoskoly-Slovenska-v03-Wide-1024x448.jpg 1024w, http://demo.autoskoly.sk/wp-content/uploads/Autoskoly-Slovenska-v03-Wide-300x131.jpg 300w, http://demo.autoskoly.sk/wp-content/uploads/Autoskoly-Slovenska-v03-Wide-768x336.jpg 768w, http://demo.autoskoly.sk/wp-content/uploads/Autoskoly-Slovenska-v03-Wide.jpg 1600w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+                                                        <p>Veríme, že nech je kritériom výberu cena, kvalita, lokalita, jazyk alebo osobný prístup, informácie o jednotlivých autoškolách budú napomocné každému, kto sa potrebuje rýchlo zorientovať a vybrať si tú správnu autoškolu pre seba.</p>
+                                                        <blockquote><p>Informácie o jednotlivých autoškolách budú napomocné každému, kto sa potrebuje rýchlo zorientovať a vybrať si tú správnu autoškolu pre seba.</p></blockquote>
+                                                        <h3>Nenašli ste na našich stránkach Vašu autoškolu?</h3>
+                                                        <p>Ak máte záujem, aby sa aj Vaša autoškola stala súčasťou našej databázy, napíšte nám email alebo si objednajte priestor na našich stránkach cez objednávkový formulár. Registrácia autoškoly na našich stránkach je následne skontrolovaná a po overení údajov zverejnená v databáze.</p>
+                                                        <a
+                                                                href="#"
+                                                                id="ait-sc-button-1"
+                                                                class="ait-sc-button alignnone  buticon-left    simple"
+                                                                style="width:350px;"
+                                                                >
+	<span class="container">
+		<span class="wrap">
+
+
+						<span class="text" style="text-align:center;">
+								<span class="title" style="">
+					Mam záujem o viac informacii				</span>
+											</span>
+
+					</span>
+	</span>
+                                                        </a>
+
+                                                        <p></div><div class="one_half column-last bbcol"></p>
+                                                    <h3>Mám záujem o viac informacií</h3>
+                                                    <p>Vyplnením formulára preukazujete záujem zverejniť informácie o Vašej autoškole na našich stránkach. Predtým než údaje o Vašej autoškole zverejníme, Vás však ešte budeme emailom kontaktovať, aby sme overili správnosť údajov. Ak nechcete vyplniť formulár alebo máte ďalšie otázky, môžete nám priamo napísať email na <a href="mailto:kontakt@autoskoly.sk">kontakt@autoskoly.sk</a></p>
+
+                                                    <div class='gf_browser_chrome gform_wrapper' id='gform_wrapper_1' ><a id='gf_1' class='gform_anchor' ></a><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_1' id='gform_1'  action='/pre-majitelov-autoskol/#gf_1'>
+                                                        <div class='gform_body'><ul id='gform_fields_1' class='gform_fields top_label form_sublabel_below description_below'><li id='field_1_1' class='gfield field_sublabel_below field_description_below gfield_visibility_visible' ><label class='gfield_label gfield_label_before_complex' for='input_1_1_3' >Name</label><div class='ginput_complex ginput_container no_prefix has_first_name no_middle_name has_last_name no_suffix gf_name_has_2 ginput_container_name gfield_trigger_change' id='input_1_1'>
+
+                            <span id='input_1_1_3_container' class='name_first' >
+                                                    <input type='text' name='input_1.3' id='input_1_1_3' value='' aria-label='First name' tabindex='2'   aria-invalid="false" />
+                                                    <label for='input_1_1_3' >Meno</label>
+                                                </span>
+
+                            <span id='input_1_1_6_container' class='name_last' >
+                                                    <input type='text' name='input_1.6' id='input_1_1_6' value='' aria-label='Last name' tabindex='4'   aria-invalid="false" />
+                                                    <label for='input_1_1_6' >Priezvisko</label>
+                                                </span>
+
+                                                        </div></li><li id='field_1_6' class='gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible' ><label class='gfield_label' for='input_1_6' >Meno autoškoly<span class='gfield_required'>*</span></label><div class='ginput_container ginput_container_text'><input name='input_6' id='input_1_6' type='text' value='' class='medium'  tabindex='6'   aria-required="true" aria-invalid="false" /></div></li><li id='field_1_2' class='gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible' ><label class='gfield_label' for='input_1_2' >Email<span class='gfield_required'>*</span></label><div class='ginput_container ginput_container_email'>
+                                                            <input name='input_2' id='input_1_2' type='text' value='' class='medium' tabindex='7'   />
+                                                        </div></li><li id='field_1_3' class='gfield field_sublabel_below field_description_below gfield_visibility_visible' ><label class='gfield_label' for='input_1_3' >Telefón</label><div class='ginput_container ginput_container_phone'><input name='input_3' id='input_1_3' type='text' value='' class='medium' tabindex='8'    aria-invalid="false" /></div></li><li id='field_1_7' class='gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible' ><label class='gfield_label' for='input_1_7' >Mám záujem<span class='gfield_required'>*</span></label><div class='ginput_container ginput_container_select'><select name='input_7' id='input_1_7'  class='medium gfield_select' tabindex='9'  aria-required="true" aria-invalid="false"><option value='O reklamu na vašich stránkach' >O reklamu na vašich stránkach</option><option value='O zverejnenie autoškoly na vašich stránkach' >O zverejnenie autoškoly na vašich stránkach</option><option value='Iné' >Iné</option></select></div></li><li id='field_1_4' class='gfield field_sublabel_below field_description_below gfield_visibility_visible' ><label class='gfield_label' for='input_1_4' >Správa</label><div class='ginput_container ginput_container_textarea'><textarea name='input_4' id='input_1_4' class='textarea medium' tabindex='10'    aria-invalid="false"   rows='10' cols='50'></textarea></div></li>
+                                                        </ul></div>
+                                                        <div class='gform_footer top_label'> <input type='submit' id='gform_submit_button_1' class='gform_button button' value='Odoslať' tabindex='11' onclick='if(window["gf_submitting_1"]){return false;}  window["gf_submitting_1"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_1"]){return false;} window["gf_submitting_1"]=true;  jQuery("#gform_1").trigger("submit",[true]); }' /> <input type='hidden' name='gform_ajax' value='form_id=1&amp;title=&amp;description=&amp;tabindex=1' />
+                                                            <input type='hidden' class='gform_hidden' name='is_submit_1' value='1' />
+                                                            <input type='hidden' class='gform_hidden' name='gform_submit' value='1' />
+
+                                                            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+                                                            <input type='hidden' class='gform_hidden' name='state_1' value='WyJbXSIsIjY4NWUxYzFhNDFjYmU5MTk2YmM1ZTgxMWJkYjBkYjY1Il0=' />
+                                                            <input type='hidden' class='gform_hidden' name='gform_target_page_number_1' id='gform_target_page_number_1' value='0' />
+                                                            <input type='hidden' class='gform_hidden' name='gform_source_page_number_1' id='gform_source_page_number_1' value='1' />
+                                                            <input type='hidden' name='gform_field_values' value='' />
+
+                                                        </div>
+                                                    </form>
+                                                    </div>
+                                                    <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_1' id='gform_ajax_frame_1'>This iframe contains the logic required to handle AJAX powered Gravity Forms.</iframe>
+                                                    <script type='text/javascript'>jQuery(document).ready(function($){gformInitSpinner( 1, 'http://demo.autoskoly.sk/wp-content/plugins/gravityforms/images/spinner.gif' );jQuery('#gform_ajax_frame_1').load( function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_1');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_1').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;if(is_form){jQuery('#gform_wrapper_1').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_1').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_1').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_1').offset().top); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_1').val();gformInitSpinner( 1, 'http://demo.autoskoly.sk/wp-content/plugins/gravityforms/images/spinner.gif' );jQuery(document).trigger('gform_page_loaded', [1, current_page]);window['gf_submitting_1'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('#gforms_confirmation_message_1').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_1').replaceWith('<' + 'div id=\'gforms_confirmation_message_1\' class=\'gform_confirmation_message_1 gforms_confirmation_message\'' + '>' + confirmation_content + '<' + '/div' + '>');jQuery(document).scrollTop(jQuery('#gforms_confirmation_message_1').offset().top);jQuery(document).trigger('gform_confirmation_loaded', [1]);window['gf_submitting_1'] = false;}, 50);}else{jQuery('#gform_1').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [1, current_page]);} );} );</script><script type='text/javascript'> if(typeof gf_global == 'undefined') var gf_global = {"gf_currency_config":{"name":"Euro","symbol_left":"","symbol_right":"&#8364;","symbol_padding":" ","thousand_separator":".","decimal_separator":",","decimals":2},"base_url":"http:\/\/demo.autoskoly.sk\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"http:\/\/demo.autoskoly.sk\/wp-content\/plugins\/gravityforms\/images\/spinner.gif"};jQuery(document).bind('gform_post_render', function(event, formId, currentPage){if(formId == 1) {} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} );</script><script type='text/javascript'> jQuery(document).ready(function(){jQuery(document).trigger('gform_post_render', [1, 1]) } ); </script>
+                                                    <p></div><div class="clear"></div></p>
+                                                    <p><span style="border-radius: 2px; text-indent: 20px; width: auto; padding: 0px 4px 0px 0px; text-align: center; font: bold 11px/20px 'Helvetica Neue',Helvetica,sans-serif; color: #ffffff; background: #bd081c no-repeat scroll 3px 50% / 14px 14px; position: absolute; opacity: 1; z-index: 8675309; display: none; cursor: pointer; top: 215px; left: 58px;">Save</span></p>
+
+
+                                                </div><!-- .entry-content -->
+
+                                            </article><!-- #post -->
+
+                                        </div><!-- #content -->
+                                    </div><!-- #primary -->
+
+                                    <script id="elm-content-7-script">
+                                        jQuery(window).load(function(){
+                                            jQuery("#elm-content-7-main").find('img').each(function(){
+                                                if(jQuery(this).parent().hasClass('wp-caption')){
+                                                    jQuery(this).parent().addClass('load-finished');
+                                                } else {
+                                                    jQuery(this).addClass('load-finished');
+                                                }
+                                            });
+                                            jQuery("#elm-content-7-main").addClass('load-finished');
+                                        });
+                                    </script>
+                                </div><!-- .elm-wrapper -->
+
+                            </section>
+
+                            <!-- COMMENTS DISABLED -->
+
+
+                        </div><!-- .elements-area -->
+                        <div id="secondary-right" class="sidebar-right-area" role="complementary">
+                            <div id="nav_menu-2" class="widget-1 widget-prvé widget-odd widget-container widget_nav_menu"><div class="widget-1 widget-prvé widget-odd widget"><div class="widget-title"><!-- no widget title --></div><div class="widget-content"><div class="menu-page-sidebar-menu-container"><ul id="menu-page-sidebar-menu" class="menu"><li id="menu-item-188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-188"><a href="http://demo.autoskoly.sk/o-strankach-autoskoly-slovenska/">O nás</a></li>
+                                <li id="menu-item-189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-189"><a href="http://demo.autoskoly.sk/poradna/ako-si-vybrat-spravnu-autoskolu/">Ako si vybrať autoškolu</a></li>
+                                <li id="menu-item-190" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-190"><a href="http://demo.autoskoly.sk/poradna/typy-vodicskych-preukazov/">Typy vodičských preukazov</a></li>
+                                <li id="menu-item-194" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-73 current_page_item menu-item-194"><a href="http://demo.autoskoly.sk/pre-majitelov-autoskol/">Pre majiteľov autoškôl</a></li>
+                            </ul></div></div></div></div><div id="text-11" class="widget-2 widget-aj advertisement widget-container widget_text"><div class="widget-2 widget-aj widget"><div class="widget-title"><!-- no widget title --></div><div class="widget-content">			<div class="textwidget"><!-- meta slider -->
+                            <div style="width: 100%;" class="metaslider metaslider-nivo metaslider-88 ml-slider">
+
+                                <div id="metaslider_container_88">
+                                    <div class='slider-wrapper theme-default'>
+                                        <div class='ribbon'></div>
+                                        <div id='metaslider_88' class='nivoSlider'>
+                                            <a href="http://www.euroautodiely.sk/originalne-diely/mercedes-benz" target="_self"><img src="http://demo.autoskoly.sk/wp-content/uploads/euroautodiely_sk-320x260.jpg" height="260" width="320" alt="EUROautodiely.sk" class="slider-88 slide-161" /></a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <script type="text/javascript">
+                                    var metaslider_88 = function($) {
+                                        $('#metaslider_88').nivoSlider({
+                                            boxCols:8,
+                                            boxRows:8,
+                                            pauseTime:10000,
+                                            effect:"random",
+                                            controlNav:false,
+                                            directionNav:false,
+                                            pauseOnHover:true,
+                                            animSpeed:2000,
+                                            prevText:"&lt;",
+                                            nextText:"&gt;",
+                                            slices:2,
+                                            manualAdvance:false
+                                        });
+                                    };
+                                    var timer_metaslider_88 = function() {
+                                        var slider = !window.jQuery ? window.setTimeout(timer_metaslider_88, 100) : !jQuery.isReady ? window.setTimeout(timer_metaslider_88, 1) : metaslider_88(window.jQuery);
+                                    };
+                                    timer_metaslider_88();
+                                </script>
+                            </div>
+                            <!--// meta slider--></div>
+                        </div></div></div><div id="tag_cloud-4" class="widget-3 widget-posledný widget-odd widget-container widget_tag_cloud"><div class="widget-3 widget-posledný widget-odd widget"><div class="widget-title"><h3>Hľadaj autoškolu podľa kraja</h3></div><div class="widget-content"><div class="tagcloud"><a href='http://demo.autoskoly.sk/kraj/kosicky-kraj/' class='tag-link-3 tag-link-position-1' title='47 tém' style='font-size: 22pt;'>Košický Kraj</a>
+                            <a href='http://demo.autoskoly.sk/kraj/nitriansky-kraj/' class='tag-link-39 tag-link-position-2' title='27 tém' style='font-size: 8pt;'>Nitriansky Kraj</a>
+                            <a href='http://demo.autoskoly.sk/kraj/presovsky-kraj/' class='tag-link-42 tag-link-position-3' title='42 tém' style='font-size: 18.9565217391pt;'>Prešovský Kraj</a></div>
+                        </div></div></div></div>
+                    </div><!-- .elements-sidebar-wrap -->
+                </div><!-- .grid-main -->
+            </div><!-- .elements-with-sidebar -->
+
+        </div><!-- .main-sections -->
+    </div><!-- #main .elements -->
+
+
+
+    <footer id="footer" class="footer" role="contentinfo">
+
+        <div class="footer-widgets">
+            <div class="footer-widgets-wrap grid-main">
+                <div class="footer-widgets-container">
+
+
+                    <div class="widget-area __footer-0 widget-area-1">
+                        <div id="text-4" class="widget-1 widget-prvé widget-posledný widget-odd widget-container widget_text"><div class="widget-1 widget-prvé widget-posledný widget-odd widget"><div class="widget-title"><h3>Pár slov o nás</h3></div><div class="widget-content">			<div class="textwidget"><p>Sme tým mladých ľudí, ktorý si dal za cieľ vybudovať najväčšiu online databázu autoškôl na Slovensku. Veríme, že výber správnej autoškoly je dôležitý a nemal by závisiesť striktne len od ceny kurzov.</p>
+
+                            <a
+                                    href="mailto:kontakt@autoskoly.sk"
+                                    id="ait-sc-button-2"
+                                    class="ait-sc-button alignleft  buticon-left    simple"
+                                    style="width:180px;"
+                                    >
+	<span class="container">
+		<span class="wrap">
+
+
+						<span class="text" style="text-align:center;">
+								<span class="title" style="">
+					Napíšte nám				</span>
+											</span>
+
+					</span>
+	</span>
+                            </a>
+                        </div>
+                        </div></div></div>						</div>
+                    <div class="widget-area __footer-1 widget-area-2">
+                        <div id="text-6" class="widget-1 widget-prvé widget-posledný widget-odd widget-container widget_text"><div class="widget-1 widget-prvé widget-posledný widget-odd widget"><div class="widget-title"><!-- no widget title --></div><div class="widget-content">			<div class="textwidget"><img class="alignright wp-image-177" src="http://demo.autoskoly.sk/wp-content/uploads/OurTeam01-300x200.jpg" alt="Autoskoly SK Team"  /></div>
+                        </div></div></div>						</div>
+                    <div class="widget-area __footer-2 widget-area-3">
+                        <div id="text-7" class="widget-1 widget-prvé widget-posledný widget-odd widget-container widget_text"><div class="widget-1 widget-prvé widget-posledný widget-odd widget"><div class="widget-title"><h3>Kontakt</h3></div><div class="widget-content">			<div class="textwidget"><p>Chrastné 2<br />
+                            04444 Chrastné<br />
+                            Slovensko</p>
+                            <p>Mobil: +84 128 987 13 78<br />
+                                Email: kontakt@autoskoly.sk </p>
+                        </div>
+                        </div></div></div>						</div>
+                    <div class="widget-area __footer-3 widget-area-4">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="site-footer">
+            <div class="site-footer-wrap grid-main">
+                <div class="nav-menu-container nav-menu-footer"><ul id="menu-footer-menu" class="nav-menu clear"><li id="menu-item-192" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-192"><a href="http://demo.autoskoly.sk/o-strankach-autoskoly-slovenska/">O nás</a></li>
+                    <li id="menu-item-193" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-73 current_page_item menu-item-193"><a href="http://demo.autoskoly.sk/pre-majitelov-autoskol/">Pre majiteľov autoškôl</a></li>
+                </ul></div>				<div class="footer-text"><p><a href="http://www.autoskoly.sk">© 2017 Copyright Autoškoly SK</a> | <a href="mailto:kontakt@autoskoly.sk">Admin</a></p></div>
+            </div>
+        </div>
+
+    </footer><!-- /#footer -->
+</div><!-- /#page -->
+
+
+<include src="partials/scripts.html"></include>
+
+
+</body>
+</html>
