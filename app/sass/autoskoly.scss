@@ -149,7 +149,7 @@
         display: none;
         @include tablet{
             display: block;
-            border-bottom: -40px;
+            bottom: -40px;
         }
     }
     .item-footer .label {
@@ -197,8 +197,7 @@
 }
 
 .search-form-type-1 .elm-search-form .search-inputs-wrap{
-    width: -webkit-calc(100% - 10px);
-    width: calc(100% - 10px);
+    width: 100%;
 }
 
 .advertisement,
