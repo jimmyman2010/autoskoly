@@ -86,6 +86,14 @@
 									{/if*}
 
 									{if is_array($categories) && count($categories) > 0}
+									<div class="item-categories-wrap">
+										<div class="img-mobile">
+											{if $post->image}
+											<img src="{imageUrl $post->imageUrl, width => 200, height => 240, crop => 1}" alt="Featured">
+											{else}
+											<img src="{imageUrl $noFeatured, width => 200, height => 240, crop => 1}" alt="Featured">
+											{/if}
+										</div>
 										<div class="item-categories">
 											{foreach $categories as $category}
 												{var $catLink = get_term_link($category)}
@@ -97,19 +105,20 @@
 												<a href="{$catLink}"><span class="item-category">{!$category->name}</span></a>
 											{/foreach}
 										</div>
+									</div>
 									{/if}
 								</div>
+
+								{if $post->hasExcerpt}
 								<div class="item-body">
 									<div class="entry-content">
 										<p>
-										{if $post->hasExcerpt}
 											{!$post->excerpt|striptags|trim|truncate: 140}
-										{else}
-											{!$post->content|striptags|trim|truncate: 250}
-										{/if}
 										</p>
 									</div>
 								</div>
+								{/if}
+
 								<div class="item-footer">
 
 									{if $meta->languagesOffered}

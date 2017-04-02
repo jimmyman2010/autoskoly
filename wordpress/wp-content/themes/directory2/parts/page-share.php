@@ -114,7 +114,7 @@ PREPARE FOR SHARE *}
 		</ul>
 
 		<div class="share-text">
-			{!__ '<span class="title">Share</span> <span class="subtitle">this page</span>'}
+			Zdieľaj
 		</div>
 
 

@@ -45,13 +45,14 @@
         padding: 0 0 10px 30px;
         position: relative;
         @include box-sizing(border-box);
+        line-height: 22px;
         &:before {
             content: "";
             width: 20px;
             height: 20px;
             background: url(../../design/img/lists.png) -60px 0 no-repeat #1d70a3;
             position: absolute;
-            top: 3px;
+            top: 1px;
             left: 0;
             @include border-radius(100%);
         }
@@ -72,5 +73,80 @@
             list-style-type: decimal;
             padding-left: 6px;
         }
+    }
+}
+
+.item-categories-wrap{
+    @include clearfix;
+}
+.img-mobile{
+    float: left;
+    width: 58px;
+    margin: 10px 7px 0 0;
+    @include responsive(498){
+        margin-top: 0;
+    }
+    @include responsive(640){
+        display: none;
+    }
+}
+.item-container .item-categories{
+    float: left;
+    width: calc(100% - 110px);
+    @include responsive(640){
+        float: none;
+        width: auto;
+    }
+}
+.items-container .item-category{
+    padding: 5px 15px;
+    display: block;
+    @include responsive(640){
+        display: inline-block;
+        padding: 0 15px;
+    }
+}
+
+.elm-revolution-slider{
+    min-height: 0;
+    @include tablet{
+        min-height: 100px;
+    }
+}
+
+@media (max-width: 640px) {
+    .item-container .item-body p {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 0;
+    }
+    .item-container .subtitle{
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .ait-sc-button {
+        .container {
+            display: table;
+        }
+        .wrap{
+            display: table-row;
+        }
+        .icon{
+            display: table-cell;
+            text-align: right !important;
+            width: 38%;
+        }
+        .text{
+            display: table-cell;
+            text-align: left !important;
+        }
+    }
+}
+@media (max-width: 980px) {
+    .right-sidebar .item-container .item-footer {
+        font-size: 14px;
+        line-height: 24px;
+        margin-top: -5px;
     }
 }

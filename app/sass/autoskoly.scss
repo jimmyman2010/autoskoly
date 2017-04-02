@@ -141,6 +141,17 @@
 }
 
 .item-container {
+    margin-bottom: 20px;
+    @include tablet{
+        margin-bottom: 80px;
+    }
+    &:after{
+        display: none;
+        @include tablet{
+            display: block;
+            border-bottom: -40px;
+        }
+    }
     .item-footer .label {
         min-width: 115px;
     }
