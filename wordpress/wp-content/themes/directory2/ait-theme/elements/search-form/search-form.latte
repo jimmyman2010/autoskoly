@@ -91,7 +91,7 @@
 	{/if}
 {/capture}
 
-{*capture $searchRadius}
+{capture $searchRadius}
 	{var $radiusSet = $selectedRad != "" ? 'radius-set' : ''}
 	<div class="radius {$radiusSet}">
 		{if $type != 2 && $type != 3}<div class="radius-toggle radius-input-visible">{__ 'Radius:'} {__ 'Off'}</div>{else}<div class="radius-toggle radius-input-visible">x {$el->option('radiusUnits')}</div>{/if}
@@ -120,7 +120,7 @@
 
 
 	</div>
-{/capture*}
+{/capture}
 {* VARIABLES *}
 
 <div id="{$htmlId}-main" class="{$htmlClass}-main">
