@@ -1,5 +1,5 @@
 <div n:class="'address-container', $meta->displaySocialIcons && count($meta->socialIcons) > 0 ? social-icons-displayed">
-	<h2>{__ 'Information'}</h2>
+	<h2>{__ 'Informácie'}</h2>
 
 	{includePart portal/parts/single-item-social-icons}
 
