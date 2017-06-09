@@ -4,6 +4,9 @@
 		<li class="contact">
 			<a href="mailto:kontakt@autoskoly.sk"><i class="fa fa-envelope"></i> kontakt@autoskoly.sk</a>
 		</li>
+		<li class="contact">
+			<a href="tel:+412949846100"><i class="fa fa-mobile"></i> +412 949 846 100</a>
+		</li>
 		<!--
 		{foreach array_filter((array) $options->theme->social->socIcons) as $icon}
 			--><li>
